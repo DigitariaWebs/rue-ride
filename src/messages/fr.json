@@ -1,0 +1,281 @@
+{
+  "calculatorPage": {
+    "title": "Calculez Votre Tarif",
+    "backHome": "Retour à l'accueil",
+    "whereToGo": "Où voulez-vous aller ?",
+    "pickup": "Lieu de Prise en Charge",
+    "pickupPlaceholder": "Entrez une adresse à Paris...",
+    "dropoff": "Destination",
+    "dropoffPlaceholder": "Où allez-vous ?",
+    "distance": "Distance",
+    "duration": "Durée Est.",
+    "chooseRide": "Choisissez votre course",
+    "estimatedFare": "Tarif Estimé",
+    "bookNow": "Réserver Cette Course",
+    "priceNote": "Le prix final peut varier selon le trafic et les changements d'itinéraire",
+    "emptyState": "Entrez le départ et la destination pour voir l'itinéraire et les tarifs",
+    "rides": {
+      "standard": "Standard",
+      "standardDesc": "Courses abordables au quotidien",
+      "plus": "Plus",
+      "plusDesc": "Véhicules premium, confort extra",
+      "xl": "XL",
+      "xlDesc": "Jusqu'à 6 passagers",
+      "electric": "Électrique",
+      "electricDesc": "Écologique, zéro émission"
+    }
+  },
+  "metadata": {
+    "title": "Rue Ride - Votre Course à Paris Vous Attend",
+    "description": "Des trajets simples et fiables à travers Paris. Calculez votre tarif et réservez en quelques secondes."
+  },
+  "header": {
+    "home": "Accueil",
+    "services": "Services",
+    "pricing": "Tarifs",
+    "about": "À Propos",
+    "contact": "Contact",
+    "getStarted": "Commencer"
+  },
+  "hero": {
+    "tagline": "Découvrez l'App Rue Ride",
+    "explore": "Explorer",
+    "headlinePart1": "Simple.",
+    "headlinePart2": "Fiable.",
+    "headlinePart3": "Votre Course Vous Attend.",
+    "description": "Rue Ride vous connecte à des courses fiables à travers Paris, à tout moment, n'importe où. Téléchargez l'app et découvrez l'avenir du voyage sans tracas.",
+    "cta": "En Savoir Plus",
+    "downloadApp": "Télécharger l'App",
+    "reviews": "Basé sur {count}+ avis",
+    "servicesTitle": "Les services que nous offrons",
+    "servicesSubtitle": "Pour vous qui savez ce que vous voulez.",
+    "captainOnWay": "Votre Chauffeur est en route"
+  },
+  "stats": {
+    "badge": "Pourquoi Rue Ride",
+    "title": "Des courses de qualité,",
+    "titleHighlight": "Des chauffeurs de confiance",
+    "description": "Nous construisons un service de transport sur lequel vous pouvez compter. Chaque chauffeur est soigneusement vérifié, chaque course est suivie, et votre confort est notre priorité.",
+    "cta": "En Savoir Plus",
+    "rides": {
+      "label": "Temps d'Attente Moyen",
+      "sublabel": "Rapide et fiable"
+    },
+    "drivers": {
+      "label": "Chauffeurs Vérifiés",
+      "sublabel": "Contrôles stricts"
+    },
+    "co2": {
+      "label": "Couverture",
+      "sublabel": "Île-de-France"
+    }
+  },
+  "phone": {
+    "locationLabel": "Champs-Élysées, Paris",
+    "pickupPoint": "Point de prise en charge",
+    "minutes": "2 minutes",
+    "addressPlaceholder": "Avenue Montaigne, Paris",
+    "rideDetails": "Détails de la course",
+    "view": "Voir",
+    "comfort": "Confort",
+    "comfortDesc": "Spacieux et Relaxant",
+    "priceRange": "12€ - 18€",
+    "eta": "Arrivée",
+    "etaValue": "3 min",
+    "rating": "Note"
+  },
+  "services": {
+    "badge": "Nos Services",
+    "title": "Les services que nous offrons",
+    "subtitle": "Pour ceux qui savent ce qu'ils veulent.",
+    "rides": "Courses",
+    "ridesPlus": "Courses Plus",
+    "ebike": "Vélo Élec.",
+    "cityToCity": "Ville à Ville",
+    "send": "Colis",
+    "food": "Livraison Repas",
+    "groceries": "Courses",
+    "scheduled": "Programmé",
+    "captainOnWay": "Votre Chauffeur est en route"
+  },
+  "calculator": {
+    "badge": "Calculateur de Tarif",
+    "title": "Calculez Votre Tarif",
+    "subtitle": "Obtenez une estimation instantanée pour votre course à Paris",
+    "pickup": "Lieu de Prise en Charge",
+    "pickupPlaceholder": "Entrez l'adresse de départ...",
+    "dropoff": "Destination",
+    "dropoffPlaceholder": "Entrez la destination...",
+    "calculate": "Calculer le Tarif",
+    "estimatedFare": "Tarif Estimé",
+    "distance": "Distance",
+    "duration": "Durée Est.",
+    "bookNow": "Réserver",
+    "captainOnWay": "Votre Chauffeur est en route",
+    "baseFare": "Tarif de base",
+    "distanceCalc": "Distance ({distance} × 1,05€)",
+    "timeCalc": "Temps ({time} × 0,35€)",
+    "discount": "Frais de service",
+    "total": "Total",
+    "save": "Sans frais cachés"
+  },
+  "explore": {
+    "badge": "Explorez Nos Services",
+    "title": "Votre Course. Votre Choix.",
+    "titleHighlight": "Explorez les Services Rue Ride.",
+    "subtitle": "Rue Ride offre une gamme d'options de transport adaptées à vos besoins et votre budget.",
+    "anywhere": {
+      "title": "Allez Partout",
+      "description": "Profitez de la possibilité de réserver des courses dans tout Paris et au-delà. Explorez les monuments historiques ou les coins cachés en toute simplicité.",
+      "feature1": "Tous les quartiers de Paris couverts",
+      "feature2": "Transferts aéroports et gares"
+    },
+    "anytime": {
+      "title": "Voyagez à Toute Heure",
+      "description": "Jour et nuit, qu'il pleuve ou qu'il vente. Nos chauffeurs sont toujours prêts à vous conduire où vous voulez, 24h/24.",
+      "feature1": "Disponibilité 24h/24 7j/7",
+      "feature2": "Planifiez vos courses à l'avance"
+    },
+    "payment": {
+      "title": "Payez Comme Vous Voulez",
+      "description": "Plusieurs options de paiement pour votre commodité. Carte, espèces ou portefeuille numérique - ce qui vous convient le mieux.",
+      "feature1": "Paiements par carte sécurisés",
+      "feature2": "Espèces et portefeuilles numériques"
+    },
+    "testimonial1": {
+      "quote": "J'ai essayé d'autres apps de VTC, mais Rue Ride est de loin la meilleure. Les prix sont compétitifs, le service est fiable, et j'adore pouvoir choisir mon type de véhicule préféré.",
+      "name": "Marie D.",
+      "role": "Utilisatrice Régulière"
+    },
+    "testimonial2": {
+      "quote": "En tant que femme, je me sens en sécurité avec Rue Ride. L'app fournit un suivi en temps réel et me permet de partager les détails de ma course avec mes proches. Les chauffeurs sont toujours respectueux.",
+      "name": "Sophie L.",
+      "role": "Utilisatrice Quotidienne"
+    }
+  },
+  "features": {
+    "badge": "Pourquoi Nous Choisir",
+    "title": "Pourquoi Choisir Rue Ride ?",
+    "subtitle": "Nous construisons le service VTC que Paris mérite",
+    "safety": {
+      "title": "Sûr et Sécurisé",
+      "description": "Tous nos chauffeurs sont vérifiés et les véhicules régulièrement inspectés pour votre sécurité."
+    },
+    "speed": {
+      "title": "Prise en Charge Rapide",
+      "description": "Temps de prise en charge moyen de 3 minutes. Arrivez rapidement à destination."
+    },
+    "pricing": {
+      "title": "Tarifs Compétitifs",
+      "description": "Tarification transparente sans frais cachés. Connaissez votre tarif avant de monter."
+    },
+    "support": {
+      "title": "Support 24h/24",
+      "description": "Notre équipe d'assistance est toujours disponible pour vous aider."
+    },
+    "payment": {
+      "title": "Paiement Facile",
+      "description": "Payez par carte, espèces ou portefeuille numérique. Ce qui vous convient."
+    },
+    "eco": {
+      "title": "Écologique",
+      "description": "Choisissez nos options de véhicules électriques pour un trajet plus vert."
+    }
+  },
+  "testimonials": {
+    "badge": "Premiers Retours",
+    "title": "Ce Que Disent Nos Bêta-Testeurs",
+    "subtitle": "Nous avons testé avec un groupe sélectionné d'utilisateurs. Voici leurs impressions.",
+    "review1": {
+      "quote": "Rue Ride a changé ma vie ! Je redoutais les embouteillages aux heures de pointe, mais maintenant je me détends et laisse Rue Ride conduire. L'app est super facile à utiliser.",
+      "name": "Lucas B.",
+      "location": "Paris, 16ème"
+    },
+    "review2": {
+      "quote": "Rue Ride a fait une énorme différence dans ma vie. C'est pratique, abordable, et cela a créé des opportunités d'emploi pour beaucoup de gens. Excellent service !",
+      "name": "Amélie P.",
+      "location": "Paris, Le Marais"
+    },
+    "review3": {
+      "quote": "Les chauffeurs sont toujours professionnels et les voitures sont propres. J'utilise Rue Ride pour tous mes transferts aéroport maintenant. Hautement recommandé !",
+      "name": "Thomas M.",
+      "location": "Paris, 8ème"
+    }
+  },
+  "faq": {
+    "badge": "FAQ",
+    "title": "FAQ Rue Ride",
+    "subtitle": "Trouvez les réponses à vos questions ici. Si vous ne trouvez pas ce que vous cherchez, contactez notre équipe de support.",
+    "stillQuestions": "Vous avez encore des questions ?",
+    "contactUs": "Contactez notre équipe de support →",
+    "booking": {
+      "question": "Comment réserver une course ?",
+      "answer": "Téléchargez l'app Rue Ride sur l'App Store ou Google Play. Inscrivez-vous avec votre numéro de téléphone, entrez votre lieu de prise en charge et votre destination, choisissez votre type de course et confirmez. Un chauffeur vous sera assigné en quelques minutes."
+    },
+    "payment": {
+      "question": "Comment puis-je changer mon mode de paiement ?",
+      "answer": "Allez dans Paramètres dans l'app, puis Méthodes de Paiement. Vous pouvez ajouter, supprimer ou définir une méthode de paiement par défaut. Nous acceptons toutes les cartes de crédit majeures, PayPal et les paiements en espèces."
+    },
+    "cancel": {
+      "question": "Que se passe-t-il si mon chauffeur n'arrive pas ou si j'ai oublié quelque chose ?",
+      "answer": "Si votre chauffeur n'arrive pas dans les 10 minutes, vous pouvez annuler gratuitement et réserver à nouveau. Pour les objets oubliés, utilisez la fonction 'Objets Trouvés' dans l'app ou contactez notre équipe de support 24h/24."
+    },
+    "driver": {
+      "question": "Comment devenir chauffeur Rue Ride ?",
+      "answer": "Visitez notre site web ou téléchargez l'app Chauffeur. Vous aurez besoin d'un permis de conduire valide, d'une preuve d'assurance et de passer notre vérification des antécédents. La plupart des candidatures sont traitées sous 48 heures."
+    },
+    "safety": {
+      "question": "Comment Rue Ride assure-t-il la sécurité des passagers ?",
+      "answer": "Tous les chauffeurs font l'objet d'une vérification approfondie des antécédents. L'app fournit un suivi en temps réel, un bouton d'urgence et la possibilité de partager votre trajet avec vos proches. Toutes les courses sont surveillées par GPS."
+    },
+    "support": {
+      "question": "Comment contacter le service client ?",
+      "answer": "Vous pouvez nous joindre 24h/24 via le chat in-app, en appelant notre hotline, ou par email à support@rueride.fr. Nous répondons généralement dans les 5 minutes pendant les heures de bureau."
+    }
+  },
+  "finalCta": {
+    "badge": "Commencez Votre Voyage Aujourd'hui",
+    "title": "Prêt pour une",
+    "titleHighlight": "Meilleure Expérience ?",
+    "description": "Téléchargez l'app et découvrez ce que devrait être un transport fiable et confortable à Paris. Votre première course n'est qu'à un clic.",
+    "downloadOn": "Télécharger sur",
+    "appStore": "App Store",
+    "getItOn": "Disponible sur",
+    "googlePlay": "Google Play",
+    "rating": "Lancement à Paris"
+  },
+  "cta": {
+    "title": "Prêt à Partir ?",
+    "description": "Téléchargez notre app et découvrez des courses fiables à travers Paris.",
+    "button": "Commencer",
+    "availableOn": "Disponible sur iOS et Android",
+    "downloadAppStore": "Télécharger sur",
+    "appStore": "App Store",
+    "getItOn": "Disponible sur",
+    "googlePlay": "Google Play",
+    "reviews": "Bientôt disponible"
+  },
+  "footer": {
+    "description": "Votre partenaire VTC de confiance à Paris. Simple, fiable, et toujours là quand vous avez besoin.",
+    "tagline": "Simple. Fiable. Votre Course Vous Attend.",
+    "location": "Paris, France",
+    "company": "Entreprise",
+    "aboutUs": "À Propos",
+    "careers": "Carrières",
+    "press": "Presse",
+    "blog": "Blog",
+    "support": "Support",
+    "helpCenter": "Centre d'Aide",
+    "safety": "Sécurité",
+    "terms": "Conditions d'Utilisation",
+    "privacy": "Politique de Confidentialité",
+    "services": "Services",
+    "rides": "Courses",
+    "ridesPlus": "Courses Plus",
+    "business": "Entreprise",
+    "delivery": "Livraison",
+    "social": "Nos Réseaux",
+    "copyright": "© {year} Rue Ride. Tous droits réservés.",
+    "madeWith": "Fait avec ❤️ à Paris"
+  }
+}

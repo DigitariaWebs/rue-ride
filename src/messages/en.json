@@ -1,0 +1,281 @@
+{
+  "calculatorPage": {
+    "title": "Calculate Your Fare",
+    "backHome": "Back to Home",
+    "whereToGo": "Where do you want to go?",
+    "pickup": "Pickup Location",
+    "pickupPlaceholder": "Enter pickup address in Paris...",
+    "dropoff": "Destination",
+    "dropoffPlaceholder": "Where are you going?",
+    "distance": "Distance",
+    "duration": "Est. Duration",
+    "chooseRide": "Choose your ride",
+    "estimatedFare": "Estimated Fare",
+    "bookNow": "Book This Ride",
+    "priceNote": "Final price may vary based on traffic and route changes",
+    "emptyState": "Enter pickup and destination to see route and pricing",
+    "rides": {
+      "standard": "Standard",
+      "standardDesc": "Affordable everyday rides",
+      "plus": "Plus",
+      "plusDesc": "Premium vehicles, extra comfort",
+      "xl": "XL",
+      "xlDesc": "Up to 6 passengers",
+      "electric": "Electric",
+      "electricDesc": "Eco-friendly zero emission"
+    }
+  },
+  "metadata": {
+    "title": "Rue Ride - Your Paris Ride Awaits",
+    "description": "Simple, reliable rides across Paris. Calculate your fare and book your ride in seconds."
+  },
+  "header": {
+    "home": "Home",
+    "services": "Services",
+    "pricing": "Pricing",
+    "about": "About Us",
+    "contact": "Contact",
+    "getStarted": "Get Started"
+  },
+  "hero": {
+    "tagline": "Explore the Rue Ride App",
+    "explore": "Explore",
+    "headlinePart1": "Simple.",
+    "headlinePart2": "Reliable.",
+    "headlinePart3": "Your Ride Awaits.",
+    "description": "Rue Ride connects you with reliable rides across Paris, anytime, anywhere. Download the app and experience the future of hassle-free travel.",
+    "cta": "Learn More",
+    "downloadApp": "Download App",
+    "reviews": "Based on {count}+ reviews",
+    "servicesTitle": "The services we offer",
+    "servicesSubtitle": "For you who know what you want to ride.",
+    "captainOnWay": "Your Captain is on the way"
+  },
+  "stats": {
+    "badge": "Why Rue Ride",
+    "title": "Quality Rides,",
+    "titleHighlight": "Trusted Drivers",
+    "description": "We're building a ride service you can count on. Every driver is carefully vetted, every ride is tracked, and your comfort is our priority.",
+    "cta": "Learn More",
+    "rides": {
+      "label": "Avg. Pickup Time",
+      "sublabel": "Fast & reliable"
+    },
+    "drivers": {
+      "label": "Vetted Drivers",
+      "sublabel": "Background checked"
+    },
+    "co2": {
+      "label": "Coverage",
+      "sublabel": "Île-de-France"
+    }
+  },
+  "phone": {
+    "locationLabel": "Champs-Élysées, Paris",
+    "pickupPoint": "Pick up point",
+    "minutes": "2 minutes",
+    "addressPlaceholder": "Avenue Montaigne, Paris",
+    "rideDetails": "Ride Details",
+    "view": "View",
+    "comfort": "Comfort",
+    "comfortDesc": "Spacious & Relaxing",
+    "priceRange": "€12 - 18",
+    "eta": "ETA",
+    "etaValue": "3 min",
+    "rating": "Rating"
+  },
+  "services": {
+    "badge": "Our Services",
+    "title": "The services we offer",
+    "subtitle": "For those who know what they want to ride.",
+    "rides": "Rides",
+    "ridesPlus": "Rides Plus",
+    "ebike": "E-Bike",
+    "cityToCity": "City to City",
+    "send": "Send Package",
+    "food": "Food Delivery",
+    "groceries": "Groceries",
+    "scheduled": "Scheduled",
+    "captainOnWay": "Your Captain is on the way"
+  },
+  "calculator": {
+    "badge": "Fare Calculator",
+    "title": "Calculate Your Fare",
+    "subtitle": "Get an instant estimate for your ride across Paris",
+    "pickup": "Pickup Location",
+    "pickupPlaceholder": "Enter pickup address...",
+    "dropoff": "Dropoff Location",
+    "dropoffPlaceholder": "Enter destination...",
+    "calculate": "Calculate Fare",
+    "estimatedFare": "Estimated Fare",
+    "distance": "Distance",
+    "duration": "Est. Duration",
+    "bookNow": "Book Now",
+    "captainOnWay": "Your Captain is on the way",
+    "baseFare": "Base fare",
+    "distanceCalc": "Distance ({distance} × €1.05)",
+    "timeCalc": "Time ({time} × €0.35)",
+    "discount": "Service fee",
+    "total": "Total",
+    "save": "No hidden fees"
+  },
+  "explore": {
+    "badge": "Explore Our Services",
+    "title": "Your Ride. Your Way.",
+    "titleHighlight": "Explore Rue Ride's Services.",
+    "subtitle": "Rue Ride offers a range of transportation options to fit your needs and budget.",
+    "anywhere": {
+      "title": "Go Anywhere",
+      "description": "Experience the ability to book rides across all of Paris and beyond. Explore historic landmarks or hidden gems with ease.",
+      "feature1": "All Paris neighborhoods covered",
+      "feature2": "Airport and station transfers"
+    },
+    "anytime": {
+      "title": "Ride Anytime",
+      "description": "Day or night, rain or shine. Our drivers are always ready to get you where you need to go, 24 hours a day.",
+      "feature1": "24/7 availability",
+      "feature2": "Schedule rides in advance"
+    },
+    "payment": {
+      "title": "Pay Your Way",
+      "description": "Multiple payment options for your convenience. Card, cash, or digital wallet - whatever works best for you.",
+      "feature1": "Secure card payments",
+      "feature2": "Cash and digital wallets"
+    },
+    "testimonial1": {
+      "quote": "I've tried other ride-sharing apps, but Rue Ride is by far the best. The prices are competitive, the service is reliable, and I love the option to choose my preferred car type.",
+      "name": "Marie D.",
+      "role": "Regular Rider"
+    },
+    "testimonial2": {
+      "quote": "As a woman, I feel safe using Rue Ride. The app provides real-time tracking and allows me to share my ride details with loved ones. The drivers are always respectful.",
+      "name": "Sophie L.",
+      "role": "Daily Commuter"
+    }
+  },
+  "features": {
+    "badge": "Why Choose Us",
+    "title": "Why Choose Rue Ride?",
+    "subtitle": "We're building the ride service Paris deserves",
+    "safety": {
+      "title": "Safe & Secure",
+      "description": "All our drivers are verified and vehicles are regularly inspected for your safety."
+    },
+    "speed": {
+      "title": "Fast Pickup",
+      "description": "Average pickup time of 3 minutes. Get where you need to go quickly."
+    },
+    "pricing": {
+      "title": "Competitive Pricing",
+      "description": "Transparent pricing with no hidden fees. Know your fare before you ride."
+    },
+    "support": {
+      "title": "24/7 Support",
+      "description": "Our support team is always available to help you with any issues."
+    },
+    "payment": {
+      "title": "Easy Payment",
+      "description": "Pay with card, cash, or digital wallet. Whatever works for you."
+    },
+    "eco": {
+      "title": "Eco-Friendly",
+      "description": "Choose our electric vehicle options for a greener ride."
+    }
+  },
+  "testimonials": {
+    "badge": "Early Feedback",
+    "title": "What Our Beta Users Say",
+    "subtitle": "We've been testing with a select group of users. Here's what they think so far.",
+    "review1": {
+      "quote": "Rue Ride has been a game-changer for me! I used to dread rush hour traffic, but now I just relax and let Rue Ride handle the driving. The app is super easy to use.",
+      "name": "Lucas B.",
+      "location": "Paris, 16ème"
+    },
+    "review2": {
+      "quote": "Rue Ride has made a huge difference in my life. It's convenient, affordable, and has created job opportunities for many people. Great service!",
+      "name": "Amélie P.",
+      "location": "Paris, Le Marais"
+    },
+    "review3": {
+      "quote": "The drivers are always professional and the cars are clean. I use Rue Ride for all my airport transfers now. Highly recommended for anyone in Paris!",
+      "name": "Thomas M.",
+      "location": "Paris, 8ème"
+    }
+  },
+  "faq": {
+    "badge": "FAQ",
+    "title": "Rue Ride FAQs",
+    "subtitle": "Find your topic questioned answered here. If you can't find what you're looking for, contact our support team.",
+    "stillQuestions": "Still have questions?",
+    "contactUs": "Contact our support team →",
+    "booking": {
+      "question": "How do I book a ride?",
+      "answer": "Download the Rue Ride app from the App Store or Google Play Store. Sign up with your phone number, enter your pickup and destination, choose your ride type, and confirm. A driver will be assigned to you within minutes."
+    },
+    "payment": {
+      "question": "How can I change my payment method?",
+      "answer": "Go to Settings in the app, then Payment Methods. You can add, remove, or set a default payment method. We accept all major credit cards, PayPal, and cash payments."
+    },
+    "cancel": {
+      "question": "What happens if my driver doesn't arrive or there's a missing item?",
+      "answer": "If your driver doesn't arrive within 10 minutes, you can cancel for free and rebook. For missing items, use the 'Lost & Found' feature in the app or contact our 24/7 support team."
+    },
+    "driver": {
+      "question": "How do I become a Rue Ride driver?",
+      "answer": "Visit our website or download the Driver app. You'll need a valid driver's license, proof of insurance, and to pass our background check. Most applications are processed within 48 hours."
+    },
+    "safety": {
+      "question": "How does Rue Ride ensure passenger safety?",
+      "answer": "All drivers undergo thorough background checks. The app provides real-time ride tracking, an emergency button, and the ability to share your trip with friends and family. All rides are GPS monitored."
+    },
+    "support": {
+      "question": "How can I contact customer support?",
+      "answer": "You can reach us 24/7 through the in-app chat, by calling our hotline, or via email at support@rueride.fr. We typically respond within 5 minutes during business hours."
+    }
+  },
+  "finalCta": {
+    "badge": "Start Your Journey Today",
+    "title": "Ready for a",
+    "titleHighlight": "Better Ride Experience?",
+    "description": "Download the app and discover what reliable, comfortable transportation in Paris should feel like. Your first ride is just a tap away.",
+    "downloadOn": "Download on the",
+    "appStore": "App Store",
+    "getItOn": "Get it on",
+    "googlePlay": "Google Play",
+    "rating": "Launching in Paris"
+  },
+  "cta": {
+    "title": "Ready to Ride?",
+    "description": "Download our app and experience reliable rides across Paris.",
+    "button": "Get Started",
+    "availableOn": "Available on iOS & Android",
+    "downloadAppStore": "Download on the",
+    "appStore": "App Store",
+    "getItOn": "Get it on",
+    "googlePlay": "Google Play",
+    "reviews": "Coming Soon"
+  },
+  "footer": {
+    "description": "Your trusted ride-sharing partner in Paris. Simple, reliable, and always there when you need us.",
+    "tagline": "Simple. Reliable. Your Ride Awaits.",
+    "location": "Paris, France",
+    "company": "Company",
+    "aboutUs": "About Us",
+    "careers": "Careers",
+    "press": "Press",
+    "blog": "Blog",
+    "support": "Support",
+    "helpCenter": "Help Center",
+    "safety": "Safety",
+    "terms": "Terms of Service",
+    "privacy": "Privacy Policy",
+    "services": "Services",
+    "rides": "Rides",
+    "ridesPlus": "Rides Plus",
+    "business": "Business",
+    "delivery": "Delivery",
+    "social": "Our Socials",
+    "copyright": "© {year} Rue Ride. All rights reserved.",
+    "madeWith": "Made with ❤️ in Paris"
+  }
+}
