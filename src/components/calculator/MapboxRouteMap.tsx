@@ -1,7 +1,15 @@
 "use client";
 
 import { useCallback, useEffect, useState, useRef } from "react";
-import Map, { Marker, Source, Layer, NavigationControl, type ViewStateChangeEvent, type MapRef, type LayerProps } from "react-map-gl/mapbox";
+import Map, {
+  Marker,
+  Source,
+  Layer,
+  NavigationControl,
+  type ViewStateChangeEvent,
+  type MapRef,
+  type LayerProps,
+} from "react-map-gl/mapbox";
 import { motion } from "framer-motion";
 import { useMapbox } from "./MapboxProvider";
 import { useTheme } from "@/components/ThemeProvider";
@@ -89,7 +97,9 @@ export function MapboxRouteMap({
   const { accessToken } = useMapbox();
   const { theme } = useTheme();
   const mapRef = useRef<MapRef>(null);
-  const [routeGeoJSON, setRouteGeoJSON] = useState<GeoJSON.Feature | null>(null);
+  const [routeGeoJSON, setRouteGeoJSON] = useState<GeoJSON.Feature | null>(
+    null,
+  );
   const [isLoading, setIsLoading] = useState(true);
   const [viewState, setViewState] = useState({
     ...PARIS_CENTER,
@@ -190,7 +200,7 @@ export function MapboxRouteMap({
 
   if (!accessToken) {
     return (
-      <div className="w-full h-full flex items-center justify-center bg-muted rounded-3xl">
+      <div className="w-full h-full flex items-center justify-center bg-muted">
         <p className="text-destructive">Mapbox token not configured</p>
       </div>
     );
@@ -201,7 +211,7 @@ export function MapboxRouteMap({
       initial={{ opacity: 0, scale: 0.98 }}
       animate={{ opacity: 1, scale: 1 }}
       transition={{ duration: 0.5 }}
-      className="w-full h-full rounded-3xl overflow-hidden shadow-2xl relative group"
+      className="w-full h-full overflow-hidden shadow-2xl relative group"
     >
       {/* Loading overlay */}
       <motion.div
@@ -296,11 +306,20 @@ export function MapboxRouteMap({
             <motion.div
               initial={{ scale: 0, y: -20 }}
               animate={{ scale: 1, y: 0 }}
-              transition={{ type: "spring", stiffness: 400, damping: 15, delay: 0.1 }}
+              transition={{
+                type: "spring",
+                stiffness: 400,
+                damping: 15,
+                delay: 0.1,
+              }}
             >
               <motion.div
                 animate={{ y: [0, -4, 0] }}
-                transition={{ duration: 1.5, repeat: Infinity, ease: "easeInOut" }}
+                transition={{
+                  duration: 1.5,
+                  repeat: Infinity,
+                  ease: "easeInOut",
+                }}
                 className="relative"
               >
                 <div className="w-10 h-10 rounded-full bg-destructive border-[3px] border-white shadow-xl flex items-center justify-center">
