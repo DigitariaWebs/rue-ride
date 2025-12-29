@@ -31,32 +31,32 @@ function FAQItem({
       <motion.div
         className={cn(
           "rounded-2xl border border-border bg-card/50 backdrop-blur-sm overflow-hidden transition-all duration-300",
-          isOpen && "border-primary/30 shadow-lg shadow-primary/5"
+          isOpen && "border-primary/30 shadow-lg shadow-primary/5",
         )}
         whileHover={{ scale: isOpen ? 1 : 1.01 }}
         transition={{ type: "spring", stiffness: 400, damping: 25 }}
       >
         <motion.button
           onClick={onToggle}
-          className="w-full flex items-center justify-between p-5 text-left group"
+          className="w-full flex items-center justify-between p-5 md:p-4 lg:p-5 xl:p-5 text-left group"
           whileTap={{ scale: 0.995 }}
         >
           <motion.span
             className={cn(
               "font-medium pr-4 transition-colors duration-300",
-              isOpen && "text-primary"
+              isOpen && "text-primary",
             )}
           >
             {question}
           </motion.span>
-          
+
           {/* Animated icon */}
           <motion.div
             className={cn(
               "w-8 h-8 rounded-full flex items-center justify-center shrink-0 transition-colors duration-300",
-              isOpen 
-                ? "bg-primary text-primary-foreground" 
-                : "bg-muted text-muted-foreground group-hover:bg-primary/10 group-hover:text-primary"
+              isOpen
+                ? "bg-primary text-primary-foreground"
+                : "bg-muted text-muted-foreground group-hover:bg-primary/10 group-hover:text-primary",
             )}
             animate={{ rotate: isOpen ? 180 : 0 }}
             transition={{ duration: 0.3, ease: "easeInOut" }}
@@ -78,21 +78,21 @@ function FAQItem({
           {isOpen && (
             <motion.div
               initial={{ height: 0, opacity: 0 }}
-              animate={{ 
-                height: "auto", 
+              animate={{
+                height: "auto",
                 opacity: 1,
                 transition: {
                   height: { duration: 0.3, ease: "easeOut" },
-                  opacity: { duration: 0.2, delay: 0.1 }
-                }
+                  opacity: { duration: 0.2, delay: 0.1 },
+                },
               }}
-              exit={{ 
-                height: 0, 
+              exit={{
+                height: 0,
                 opacity: 0,
                 transition: {
                   height: { duration: 0.2, ease: "easeIn" },
-                  opacity: { duration: 0.1 }
-                }
+                  opacity: { duration: 0.1 },
+                },
               }}
             >
               <motion.div
@@ -130,7 +130,7 @@ export function FAQSection() {
   const [openIndex, setOpenIndex] = useState<number | null>(0);
 
   return (
-    <section className="py-20 lg:py-28 relative">
+    <section className="py-20 md:py-24 lg:py-26 xl:py-28 relative">
       {/* Subtle background decoration */}
       <div className="absolute inset-0 -z-10 overflow-hidden">
         <motion.div
@@ -152,7 +152,7 @@ export function FAQSection() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.7 }}
-          className="text-center mb-16"
+          className="text-center mb-16 md:mb-14 lg:mb-16 xl:mb-16"
         >
           <motion.div
             className="inline-flex items-center gap-2 px-4 py-2 rounded-full border border-border bg-card/50 backdrop-blur-sm text-sm mb-6"
@@ -167,7 +167,7 @@ export function FAQSection() {
             <span className="text-primary font-medium">{t("badge")}</span>
           </motion.div>
           <motion.h2
-            className="text-3xl lg:text-5xl font-bold mb-4"
+            className="text-3xl md:text-4xl lg:text-4.5xl xl:text-5xl font-bold mb-4"
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
@@ -187,7 +187,7 @@ export function FAQSection() {
         </motion.div>
 
         {/* FAQ Items */}
-        <div className="space-y-4">
+        <div className="space-y-4 md:space-y-3 lg:space-y-4 xl:space-y-4">
           {faqKeys.map((key, index) => (
             <FAQItem
               key={key}

@@ -6,15 +6,15 @@ import { Quote, Star } from "lucide-react";
 import { Card } from "@/components/ui/card";
 import { useRef } from "react";
 
-function TestimonialCard({ 
-  index, 
-  quote, 
-  name, 
-  location 
-}: { 
-  index: number; 
-  quote: string; 
-  name: string; 
+function TestimonialCard({
+  index,
+  quote,
+  name,
+  location,
+}: {
+  index: number;
+  quote: string;
+  name: string;
   location: string;
 }) {
   const ref = useRef<HTMLDivElement>(null);
@@ -31,10 +31,10 @@ function TestimonialCard({
     const rect = ref.current.getBoundingClientRect();
     const centerX = rect.left + rect.width / 2;
     const centerY = rect.top + rect.height / 2;
-    
+
     const rX = (e.clientY - centerY) / 20;
     const rY = (centerX - e.clientX) / 20;
-    
+
     rotateX.set(rX);
     rotateY.set(rY);
   };
@@ -67,7 +67,7 @@ function TestimonialCard({
       }}
       className="perspective-1000"
     >
-      <Card className="relative p-6 h-full border-border bg-card/50 backdrop-blur-sm hover:border-primary/30 hover:shadow-xl transition-all duration-300 group overflow-hidden">
+      <Card className="relative p-6 md:p-5 lg:p-6 xl:p-6 h-full border-border bg-card/50 backdrop-blur-sm hover:border-primary/30 hover:shadow-xl transition-all duration-300 group overflow-hidden">
         {/* Shine effect */}
         <motion.div
           className="absolute inset-0 bg-gradient-to-r from-transparent via-white/5 to-transparent -translate-x-full"
@@ -100,7 +100,11 @@ function TestimonialCard({
           initial={{ opacity: 0, scale: 0.5, rotate: -20 }}
           whileInView={{ opacity: 1, scale: 1, rotate: 0 }}
           viewport={{ once: true }}
-          transition={{ delay: 0.4 + index * 0.1, type: "spring", stiffness: 200 }}
+          transition={{
+            delay: 0.4 + index * 0.1,
+            type: "spring",
+            stiffness: 200,
+          }}
           className="mb-3"
         >
           <Quote className="w-6 h-6 text-primary/30 group-hover:text-primary/50 transition-colors duration-300" />
@@ -149,7 +153,7 @@ export function TestimonialsSection() {
   const t = useTranslations("testimonials");
 
   return (
-    <section className="py-20 lg:py-28 relative overflow-hidden">
+    <section className="py-20 md:py-24 lg:py-26 xl:py-28 relative overflow-hidden">
       {/* Background with animation */}
       <motion.div
         className="absolute inset-0 -z-10 bg-gradient-to-b from-transparent via-muted/30 to-transparent"
@@ -190,7 +194,7 @@ export function TestimonialsSection() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.7 }}
-          className="text-center mb-16"
+          className="text-center mb-16 md:mb-14 lg:mb-16 xl:mb-16"
         >
           <motion.div
             className="inline-flex items-center gap-2 px-4 py-2 rounded-full border border-border bg-card/50 backdrop-blur-sm text-sm mb-6"
@@ -205,7 +209,7 @@ export function TestimonialsSection() {
             </motion.span>
           </motion.div>
           <motion.h2
-            className="text-3xl lg:text-5xl font-bold mb-4"
+            className="text-3xl md:text-4xl lg:text-4.5xl xl:text-5xl font-bold mb-4"
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
@@ -225,7 +229,7 @@ export function TestimonialsSection() {
         </motion.div>
 
         {/* Testimonials Grid */}
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-5 lg:gap-6 xl:gap-6">
           {[1, 2, 3].map((testimonial, index) => (
             <TestimonialCard
               key={testimonial}

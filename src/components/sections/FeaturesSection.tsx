@@ -1,20 +1,68 @@
 "use client";
 
 import { useTranslations } from "next-intl";
-import { motion, useMotionTemplate, useMotionValue, useSpring } from "framer-motion";
-import { Shield, Zap, BadgeEuro, HeadphonesIcon, CreditCard, Leaf } from "lucide-react";
+import {
+  motion,
+  useMotionTemplate,
+  useMotionValue,
+  useSpring,
+} from "framer-motion";
+import {
+  Shield,
+  Zap,
+  BadgeEuro,
+  HeadphonesIcon,
+  CreditCard,
+  Leaf,
+} from "lucide-react";
 import { useRef } from "react";
 
 const features = [
-  { key: "safety", icon: Shield, gradient: "from-emerald-500/20 to-emerald-500/5", iconBg: "group-hover:bg-emerald-500/20" },
-  { key: "speed", icon: Zap, gradient: "from-amber-500/20 to-amber-500/5", iconBg: "group-hover:bg-amber-500/20" },
-  { key: "pricing", icon: BadgeEuro, gradient: "from-blue-500/20 to-blue-500/5", iconBg: "group-hover:bg-blue-500/20" },
-  { key: "support", icon: HeadphonesIcon, gradient: "from-purple-500/20 to-purple-500/5", iconBg: "group-hover:bg-purple-500/20" },
-  { key: "payment", icon: CreditCard, gradient: "from-rose-500/20 to-rose-500/5", iconBg: "group-hover:bg-rose-500/20" },
-  { key: "eco", icon: Leaf, gradient: "from-teal-500/20 to-teal-500/5", iconBg: "group-hover:bg-teal-500/20" },
+  {
+    key: "safety",
+    icon: Shield,
+    gradient: "from-emerald-500/20 to-emerald-500/5",
+    iconBg: "group-hover:bg-emerald-500/20",
+  },
+  {
+    key: "speed",
+    icon: Zap,
+    gradient: "from-amber-500/20 to-amber-500/5",
+    iconBg: "group-hover:bg-amber-500/20",
+  },
+  {
+    key: "pricing",
+    icon: BadgeEuro,
+    gradient: "from-blue-500/20 to-blue-500/5",
+    iconBg: "group-hover:bg-blue-500/20",
+  },
+  {
+    key: "support",
+    icon: HeadphonesIcon,
+    gradient: "from-purple-500/20 to-purple-500/5",
+    iconBg: "group-hover:bg-purple-500/20",
+  },
+  {
+    key: "payment",
+    icon: CreditCard,
+    gradient: "from-rose-500/20 to-rose-500/5",
+    iconBg: "group-hover:bg-rose-500/20",
+  },
+  {
+    key: "eco",
+    icon: Leaf,
+    gradient: "from-teal-500/20 to-teal-500/5",
+    iconBg: "group-hover:bg-teal-500/20",
+  },
 ];
 
-function TiltCard({ children, gradient }: { children: React.ReactNode; gradient: string }) {
+function TiltCard({
+  children,
+  gradient,
+}: {
+  children: React.ReactNode;
+  gradient: string;
+}) {
   const ref = useRef<HTMLDivElement>(null);
   const mouseX = useMotionValue(0);
   const mouseY = useMotionValue(0);
@@ -28,11 +76,11 @@ function TiltCard({ children, gradient }: { children: React.ReactNode; gradient:
     const rect = ref.current.getBoundingClientRect();
     const centerX = rect.left + rect.width / 2;
     const centerY = rect.top + rect.height / 2;
-    
+
     // Position for gradient spotlight
     mouseX.set(e.clientX - rect.left);
     mouseY.set(e.clientY - rect.top);
-    
+
     // Tilt effect
     const x = (e.clientY - centerY) / 10;
     const y = (centerX - e.clientX) / 10;
@@ -73,7 +121,7 @@ export function FeaturesSection() {
   const t = useTranslations("features");
 
   return (
-    <section id="about" className="py-24 lg:py-32 relative">
+    <section id="about" className="py-24 md:py-28 lg:py-30 xl:py-32 relative">
       {/* Background */}
       <motion.div
         className="absolute inset-0 -z-10 bg-gradient-to-b from-transparent via-muted/30 to-transparent"
@@ -90,7 +138,7 @@ export function FeaturesSection() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.7 }}
-          className="text-center mb-16"
+          className="text-center mb-16 md:mb-14"
         >
           <motion.div
             className="inline-flex items-center gap-2 px-4 py-2 rounded-full border border-border bg-card/50 backdrop-blur-sm text-sm mb-6"
@@ -99,7 +147,7 @@ export function FeaturesSection() {
             <span className="text-primary font-medium">{t("badge")}</span>
           </motion.div>
           <motion.h2
-            className="text-3xl lg:text-5xl font-bold mb-4"
+            className="text-3xl md:text-4xl lg:text-4.5xl xl:text-5xl font-bold mb-4"
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
@@ -119,7 +167,7 @@ export function FeaturesSection() {
         </motion.div>
 
         {/* Features Grid */}
-        <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8">
+        <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-7 lg:gap-8 xl:gap-8">
           {features.map((feature, index) => {
             const Icon = feature.icon;
             return (
@@ -140,14 +188,17 @@ export function FeaturesSection() {
                   <motion.div
                     whileHover={{ y: -8 }}
                     transition={{ type: "spring", stiffness: 400, damping: 20 }}
-                    className="relative h-full p-8 rounded-3xl border border-border bg-card/50 backdrop-blur-sm hover:border-primary/30 hover:shadow-xl hover:shadow-primary/5 transition-all duration-300"
+                    className="relative h-full p-8 md:p-7 lg:p-8 xl:p-8 rounded-3xl border border-border bg-card/50 backdrop-blur-sm hover:border-primary/30 hover:shadow-xl hover:shadow-primary/5 transition-all duration-300"
                   >
                     {/* Gradient background on hover */}
                     <motion.div
                       className={`absolute inset-0 rounded-3xl bg-gradient-to-br ${feature.gradient} opacity-0 group-hover:opacity-100 transition-opacity duration-500`}
                     />
 
-                    <div className="relative z-10" style={{ transform: "translateZ(40px)" }}>
+                    <div
+                      className="relative z-10"
+                      style={{ transform: "translateZ(40px)" }}
+                    >
                       {/* Icon with animation */}
                       <motion.div
                         className={`w-14 h-14 rounded-2xl bg-primary/10 ${feature.iconBg} flex items-center justify-center mb-6 transition-all duration-300`}

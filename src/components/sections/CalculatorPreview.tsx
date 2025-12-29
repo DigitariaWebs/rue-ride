@@ -1,8 +1,22 @@
 "use client";
 
 import { useTranslations } from "next-intl";
-import { motion, useScroll, useTransform, useSpring, useMotionTemplate, useMotionValue } from "framer-motion";
-import { Navigation, ArrowRight, Calculator, Route, Clock, Euro } from "lucide-react";
+import {
+  motion,
+  useScroll,
+  useTransform,
+  useSpring,
+  useMotionTemplate,
+  useMotionValue,
+} from "framer-motion";
+import {
+  Navigation,
+  ArrowRight,
+  Calculator,
+  Route,
+  Clock,
+  Euro,
+} from "lucide-react";
 import Link from "next/link";
 import { useRef } from "react";
 import { Button } from "@/components/ui/button";
@@ -11,14 +25,18 @@ export function CalculatorPreview() {
   const t = useTranslations("calculator");
   const sectionRef = useRef<HTMLElement>(null);
   const cardRef = useRef<HTMLDivElement>(null);
-  
+
   const { scrollYProgress } = useScroll({
     target: sectionRef,
     offset: ["start end", "end start"],
   });
 
   const y = useTransform(scrollYProgress, [0, 1], [100, -50]);
-  const opacity = useTransform(scrollYProgress, [0, 0.3, 0.7, 1], [0, 1, 1, 0.8]);
+  const opacity = useTransform(
+    scrollYProgress,
+    [0, 0.3, 0.7, 1],
+    [0, 1, 1, 0.8],
+  );
   const scale = useTransform(scrollYProgress, [0, 0.3], [0.9, 1]);
 
   // Mouse spotlight effect
@@ -35,7 +53,11 @@ export function CalculatorPreview() {
   const spotlightBackground = useMotionTemplate`radial-gradient(600px circle at ${mouseX}px ${mouseY}px, hsl(var(--primary) / 0.06), transparent 80%)`;
 
   return (
-    <section ref={sectionRef} id="pricing" className="py-24 lg:py-32 relative overflow-hidden">
+    <section
+      ref={sectionRef}
+      id="pricing"
+      className="py-24 md:py-28 lg:py-30 xl:py-32 relative overflow-hidden"
+    >
       {/* Background with parallax */}
       <div className="absolute inset-0 -z-10">
         <motion.div
@@ -55,7 +77,7 @@ export function CalculatorPreview() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.7 }}
-          className="text-center mb-16"
+          className="text-center mb-16 md:mb-14 lg:mb-16 xl:mb-16"
         >
           <motion.div
             className="inline-flex items-center gap-2 px-4 py-2 rounded-full border border-border bg-card/50 backdrop-blur-sm text-sm mb-6"
@@ -70,7 +92,7 @@ export function CalculatorPreview() {
             <span className="text-primary font-medium">{t("badge")}</span>
           </motion.div>
           <motion.h2
-            className="text-3xl lg:text-5xl font-bold mb-4"
+            className="text-3xl md:text-4xl lg:text-4.5xl xl:text-5xl font-bold mb-4"
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
@@ -102,7 +124,7 @@ export function CalculatorPreview() {
             viewport={{ once: true }}
             transition={{ duration: 0.8, type: "spring", stiffness: 100 }}
             whileHover={{ y: -4 }}
-            className="relative rounded-[2rem] border border-border bg-card/80 backdrop-blur-xl p-8 lg:p-12 shadow-2xl overflow-hidden group"
+            className="relative rounded-[2rem] border border-border bg-card/80 backdrop-blur-xl p-8 md:p-10 lg:p-12 xl:p-12 shadow-2xl overflow-hidden group"
           >
             {/* Mouse spotlight */}
             <motion.div
@@ -132,7 +154,7 @@ export function CalculatorPreview() {
               />
             </motion.div>
 
-            <div className="grid lg:grid-cols-2 gap-8 lg:gap-12 items-center relative z-10">
+            <div className="grid lg:grid-cols-2 gap-8 md:gap-10 lg:gap-12 xl:gap-12 items-center relative z-10">
               {/* Left - Input Preview */}
               <div className="space-y-6">
                 <div className="space-y-4">
@@ -144,7 +166,9 @@ export function CalculatorPreview() {
                     viewport={{ once: true }}
                     transition={{ delay: 0.3 }}
                   >
-                    <label className="text-sm text-muted-foreground mb-2 block">{t("pickup")}</label>
+                    <label className="text-sm text-muted-foreground mb-2 block">
+                      {t("pickup")}
+                    </label>
                     <motion.div
                       className="relative"
                       whileHover={{ scale: 1.01 }}
@@ -171,7 +195,9 @@ export function CalculatorPreview() {
                     viewport={{ once: true }}
                     transition={{ delay: 0.4 }}
                   >
-                    <label className="text-sm text-muted-foreground mb-2 block">{t("dropoff")}</label>
+                    <label className="text-sm text-muted-foreground mb-2 block">
+                      {t("dropoff")}
+                    </label>
                     <motion.div
                       className="relative"
                       whileHover={{ scale: 1.01 }}
@@ -196,13 +222,18 @@ export function CalculatorPreview() {
                   transition={{ delay: 0.5 }}
                 >
                   <motion.div
-                    className="p-4 rounded-2xl bg-primary/5 border border-primary/10"
-                    whileHover={{ scale: 1.03, borderColor: "hsl(var(--primary) / 0.3)" }}
+                    className="p-4 md:p-3.5 lg:p-4 xl:p-4 rounded-2xl bg-primary/5 border border-primary/10"
+                    whileHover={{
+                      scale: 1.03,
+                      borderColor: "hsl(var(--primary) / 0.3)",
+                    }}
                     transition={{ type: "spring", stiffness: 400 }}
                   >
                     <div className="flex items-center gap-2 mb-1">
                       <Route className="w-4 h-4 text-primary" />
-                      <span className="text-xs text-muted-foreground">{t("distance")}</span>
+                      <span className="text-xs text-muted-foreground">
+                        {t("distance")}
+                      </span>
                     </div>
                     <motion.p
                       className="font-semibold text-lg"
@@ -215,13 +246,18 @@ export function CalculatorPreview() {
                     </motion.p>
                   </motion.div>
                   <motion.div
-                    className="p-4 rounded-2xl bg-primary/5 border border-primary/10"
-                    whileHover={{ scale: 1.03, borderColor: "hsl(var(--primary) / 0.3)" }}
+                    className="p-4 md:p-3.5 lg:p-4 xl:p-4 rounded-2xl bg-primary/5 border border-primary/10"
+                    whileHover={{
+                      scale: 1.03,
+                      borderColor: "hsl(var(--primary) / 0.3)",
+                    }}
                     transition={{ type: "spring", stiffness: 400 }}
                   >
                     <div className="flex items-center gap-2 mb-1">
                       <Clock className="w-4 h-4 text-primary" />
-                      <span className="text-xs text-muted-foreground">{t("duration")}</span>
+                      <span className="text-xs text-muted-foreground">
+                        {t("duration")}
+                      </span>
                     </div>
                     <motion.p
                       className="font-semibold text-lg"
@@ -243,7 +279,10 @@ export function CalculatorPreview() {
                   transition={{ delay: 0.6 }}
                 >
                   <Link href="/calculator" className="block">
-                    <Button size="lg" className="w-full rounded-2xl h-14 text-base group overflow-hidden relative">
+                    <Button
+                      size="lg"
+                      className="w-full rounded-2xl h-14 text-base group overflow-hidden relative"
+                    >
                       <motion.span
                         className="absolute inset-0 bg-primary-foreground/10"
                         initial={{ x: "-100%" }}
@@ -274,13 +313,19 @@ export function CalculatorPreview() {
                 >
                   {/* Fare Display */}
                   <div className="text-center mb-8">
-                    <p className="text-sm text-muted-foreground mb-2">{t("estimatedFare")}</p>
+                    <p className="text-sm text-muted-foreground mb-2">
+                      {t("estimatedFare")}
+                    </p>
                     <motion.div
                       className="flex items-center justify-center gap-2"
                       initial={{ scale: 0.5, opacity: 0 }}
                       whileInView={{ scale: 1, opacity: 1 }}
                       viewport={{ once: true }}
-                      transition={{ delay: 0.6, type: "spring", stiffness: 200 }}
+                      transition={{
+                        delay: 0.6,
+                        type: "spring",
+                        stiffness: 200,
+                      }}
                     >
                       <Euro className="w-10 h-10 text-primary" />
                       <motion.span
@@ -297,8 +342,14 @@ export function CalculatorPreview() {
                   <div className="space-y-3 mb-6">
                     {[
                       { label: t("baseFare"), value: "€2.60" },
-                      { label: t("distanceCalc", { distance: "4.2 km" }), value: "€4.41" },
-                      { label: t("timeCalc", { time: "12 min" }), value: "€4.20" },
+                      {
+                        label: t("distanceCalc", { distance: "4.2 km" }),
+                        value: "€4.41",
+                      },
+                      {
+                        label: t("timeCalc", { time: "12 min" }),
+                        value: "€4.20",
+                      },
                       { label: t("discount"), value: "€1.29" },
                     ].map((item, index) => (
                       <motion.div
@@ -309,7 +360,9 @@ export function CalculatorPreview() {
                         viewport={{ once: true }}
                         transition={{ delay: 0.7 + index * 0.1 }}
                       >
-                        <span className="text-muted-foreground">{item.label}</span>
+                        <span className="text-muted-foreground">
+                          {item.label}
+                        </span>
                         <span className="font-medium">{item.value}</span>
                       </motion.div>
                     ))}

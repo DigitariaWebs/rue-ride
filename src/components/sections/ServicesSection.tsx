@@ -2,21 +2,76 @@
 
 import { useTranslations } from "next-intl";
 import { motion, useMotionValue, useSpring, useTransform } from "framer-motion";
-import { Car, Zap, Bike, MapPin, Package, UtensilsCrossed, ShoppingBag, Clock } from "lucide-react";
+import {
+  Car,
+  Zap,
+  Bike,
+  MapPin,
+  Package,
+  UtensilsCrossed,
+  ShoppingBag,
+  Clock,
+} from "lucide-react";
 import { useRef } from "react";
 
 const services = [
-  { key: "rides", icon: Car, color: "bg-emerald-500/10 text-emerald-500", hoverColor: "group-hover:bg-emerald-500/20" },
-  { key: "ridesPlus", icon: Zap, color: "bg-amber-500/10 text-amber-500", hoverColor: "group-hover:bg-amber-500/20" },
-  { key: "ebike", icon: Bike, color: "bg-blue-500/10 text-blue-500", hoverColor: "group-hover:bg-blue-500/20" },
-  { key: "cityToCity", icon: MapPin, color: "bg-purple-500/10 text-purple-500", hoverColor: "group-hover:bg-purple-500/20" },
-  { key: "send", icon: Package, color: "bg-rose-500/10 text-rose-500", hoverColor: "group-hover:bg-rose-500/20" },
-  { key: "food", icon: UtensilsCrossed, color: "bg-orange-500/10 text-orange-500", hoverColor: "group-hover:bg-orange-500/20" },
-  { key: "groceries", icon: ShoppingBag, color: "bg-teal-500/10 text-teal-500", hoverColor: "group-hover:bg-teal-500/20" },
-  { key: "scheduled", icon: Clock, color: "bg-indigo-500/10 text-indigo-500", hoverColor: "group-hover:bg-indigo-500/20" },
+  {
+    key: "rides",
+    icon: Car,
+    color: "bg-emerald-500/10 text-emerald-500",
+    hoverColor: "group-hover:bg-emerald-500/20",
+  },
+  {
+    key: "ridesPlus",
+    icon: Zap,
+    color: "bg-amber-500/10 text-amber-500",
+    hoverColor: "group-hover:bg-amber-500/20",
+  },
+  {
+    key: "ebike",
+    icon: Bike,
+    color: "bg-blue-500/10 text-blue-500",
+    hoverColor: "group-hover:bg-blue-500/20",
+  },
+  {
+    key: "cityToCity",
+    icon: MapPin,
+    color: "bg-purple-500/10 text-purple-500",
+    hoverColor: "group-hover:bg-purple-500/20",
+  },
+  {
+    key: "send",
+    icon: Package,
+    color: "bg-rose-500/10 text-rose-500",
+    hoverColor: "group-hover:bg-rose-500/20",
+  },
+  {
+    key: "food",
+    icon: UtensilsCrossed,
+    color: "bg-orange-500/10 text-orange-500",
+    hoverColor: "group-hover:bg-orange-500/20",
+  },
+  {
+    key: "groceries",
+    icon: ShoppingBag,
+    color: "bg-teal-500/10 text-teal-500",
+    hoverColor: "group-hover:bg-teal-500/20",
+  },
+  {
+    key: "scheduled",
+    icon: Clock,
+    color: "bg-indigo-500/10 text-indigo-500",
+    hoverColor: "group-hover:bg-indigo-500/20",
+  },
 ];
 
-function MagneticCard({ children, className }: { children: React.ReactNode; className?: string }) {
+function MagneticCard({
+  children,
+  className,
+}: {
+  children: React.ReactNode;
+  className?: string;
+}) {
   const ref = useRef<HTMLDivElement>(null);
   const x = useMotionValue(0);
   const y = useMotionValue(0);
@@ -58,7 +113,10 @@ export function ServicesSection() {
   const t = useTranslations("services");
 
   return (
-    <section id="services" className="py-24 lg:py-32 relative overflow-hidden">
+    <section
+      id="services"
+      className="py-24 md:py-28 lg:py-30 xl:py-32 relative overflow-hidden"
+    >
       {/* Background decoration with subtle animation */}
       <div className="absolute inset-0 -z-10">
         <motion.div
@@ -86,7 +144,7 @@ export function ServicesSection() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.7 }}
-          className="text-center mb-16"
+          className="text-center mb-16 md:mb-14 lg:mb-16 xl:mb-16"
         >
           <motion.div
             className="inline-flex items-center gap-2 px-4 py-2 rounded-full border border-border bg-card/50 backdrop-blur-sm text-sm mb-6"
@@ -95,7 +153,7 @@ export function ServicesSection() {
             <span className="text-primary font-medium">{t("badge")}</span>
           </motion.div>
           <motion.h2
-            className="text-3xl lg:text-5xl font-bold mb-4"
+            className="text-3xl md:text-4xl lg:text-4.5xl xl:text-5xl font-bold mb-4"
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
@@ -115,7 +173,7 @@ export function ServicesSection() {
         </motion.div>
 
         {/* Services Grid */}
-        <div className="grid grid-cols-2 sm:grid-cols-4 gap-4 lg:gap-6">
+        <div className="grid grid-cols-2 sm:grid-cols-4 gap-4 md:gap-5 lg:gap-6 xl:gap-6">
           {services.map((service, index) => {
             const Icon = service.icon;
             return (
@@ -136,7 +194,7 @@ export function ServicesSection() {
                     whileHover={{ scale: 1.05, y: -6 }}
                     whileTap={{ scale: 0.98 }}
                     transition={{ type: "spring", stiffness: 400, damping: 20 }}
-                    className="group relative p-6 rounded-3xl border border-border bg-card/50 backdrop-blur-sm hover:border-primary/30 hover:shadow-xl hover:shadow-primary/5 transition-all duration-300 cursor-pointer"
+                    className="group relative p-6 md:p-5 lg:p-6 xl:p-6 rounded-3xl border border-border bg-card/50 backdrop-blur-sm hover:border-primary/30 hover:shadow-xl hover:shadow-primary/5 transition-all duration-300 cursor-pointer"
                   >
                     {/* Icon with animations */}
                     <motion.div
@@ -161,9 +219,7 @@ export function ServicesSection() {
                     </h3>
 
                     {/* Hover gradient */}
-                    <motion.div
-                      className="absolute inset-0 rounded-3xl bg-gradient-to-br from-primary/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 -z-10"
-                    />
+                    <motion.div className="absolute inset-0 rounded-3xl bg-gradient-to-br from-primary/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 -z-10" />
 
                     {/* Shine effect on hover */}
                     <motion.div
@@ -207,7 +263,9 @@ export function ServicesSection() {
                 }}
                 transition={{ duration: 1.5, repeat: Infinity }}
               />
-              <span className="text-sm text-muted-foreground">{t("captainOnWay")}</span>
+              <span className="text-sm text-muted-foreground">
+                {t("captainOnWay")}
+              </span>
             </div>
             <motion.span
               className="text-sm"

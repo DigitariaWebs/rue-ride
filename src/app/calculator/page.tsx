@@ -215,9 +215,9 @@ function CalculatorContent() {
       </div>
 
       {/* Main Content */}
-      <div className="relative min-h-screen flex flex-col md:flex-row gap-4">
+      <div className="relative min-h-screen flex flex-col md:flex-row gap-4 md:gap-6 lg:gap-6 xl:gap-6">
         {/* Left Panel - Calculator Form */}
-        <div className="absolute top-0 left-0 right-0 z-10 bg-card/90 backdrop-blur-sm text-sm md:static md:bg-transparent md:backdrop-blur-none md:text-base md:transform-none md:translate-x-0 md:w-1/4 md:max-h-screen md:overflow-y-scroll space-y-3 md:space-y-5 p-2 md:p-4">
+        <div className="absolute top-0 left-0 right-0 z-10 bg-card/90 backdrop-blur-sm text-xs sm:text-sm md:text-base lg:text-base xl:text-base md:static md:bg-transparent md:backdrop-blur-none md:text-base md:transform-none md:translate-x-0 md:w-1/2 xl:w-1/3 md:max-h-screen md:overflow-y-scroll space-y-2 md:space-y-3 lg:space-y-4 xl:space-y-4 p-1 md:p-2 lg:p-3 xl:p-3">
           {/* Mini Header */}
           <div className="flex items-center justify-between">
             <div className="flex items-center gap-3">
@@ -228,7 +228,7 @@ function CalculatorContent() {
                   transition={{ type: "spring", stiffness: 400 }}
                 >
                   <ArrowLeft className="w-4 h-4" />
-                  <span className="text-sm">{t("backHome")}</span>
+                  <span className="text-xs sm:text-sm">{t("backHome")}</span>
                 </motion.div>
               </Link>
               <div className="h-4 w-px bg-border" />
@@ -242,7 +242,7 @@ function CalculatorContent() {
                     alt="Rue Ride"
                     width={100}
                     height={35}
-                    className="h-8 w-auto dark:brightness-0 dark:invert"
+                    className="h-6 w-auto dark:brightness-0 dark:invert"
                     priority
                   />
                 </motion.div>
@@ -250,7 +250,9 @@ function CalculatorContent() {
             </div>
             <div className="flex items-center gap-2 text-sm text-muted-foreground">
               <MapPin className="w-4 h-4 text-primary" />
-              <span className="font-medium">{t("title")}</span>
+              <span className="font-medium text-xs sm:text-sm">
+                {t("title")}
+              </span>
               <button
                 onClick={() => setShowInputs(!showInputs)}
                 className="md:hidden p-1 rounded hover:bg-muted transition-colors"
@@ -269,9 +271,9 @@ function CalculatorContent() {
                 exit={{ opacity: 0, x: -30 }}
                 transition={{ duration: 0.5 }}
               >
-                <Card className="p-4 md:p-6 shadow-xl border-border/50 bg-card/80 backdrop-blur-sm">
+                <Card className="p-2 md:p-3 lg:p-4 xl:p-5 shadow-xl border-border/50 bg-card/80 backdrop-blur-sm">
                   <motion.h2
-                    className="text-xl font-semibold mb-5 flex items-center gap-2"
+                    className="text-sm sm:text-base md:text-lg lg:text-xl xl:text-xl font-semibold mb-4 flex items-center gap-2"
                     initial={{ opacity: 0 }}
                     animate={{ opacity: 1 }}
                     transition={{ delay: 0.2 }}
@@ -287,7 +289,7 @@ function CalculatorContent() {
                       animate={{ opacity: 1, y: 0 }}
                       transition={{ delay: 0.3 }}
                     >
-                      <label className="text-sm text-muted-foreground mb-1.5 block font-medium">
+                      <label className="text-xs sm:text-sm text-muted-foreground mb-1 block font-medium">
                         {t("pickup")}
                       </label>
                       <GeocoderInput
@@ -329,7 +331,7 @@ function CalculatorContent() {
                       animate={{ opacity: 1, y: 0 }}
                       transition={{ delay: 0.5 }}
                     >
-                      <label className="text-sm text-muted-foreground mb-1.5 block font-medium">
+                      <label className="text-xs sm:text-sm text-muted-foreground mb-1 block font-medium">
                         {t("dropoff")}
                       </label>
                       <GeocoderInput
@@ -361,7 +363,7 @@ function CalculatorContent() {
                 exit={{ opacity: 0, y: -20, scale: 0.95 }}
                 transition={{ type: "spring", stiffness: 300, damping: 25 }}
               >
-                <Card className="p-3 md:p-4 shadow-lg border-primary/20 bg-gradient-to-br from-primary/5 via-primary/[0.02] to-transparent">
+                <Card className="p-2 md:p-3 lg:p-4 xl:p-4 shadow-lg border-primary/20 bg-gradient-to-br from-primary/5 via-primary/[0.02] to-transparent">
                   <div className="grid grid-cols-2 gap-4">
                     <motion.div
                       className="flex items-center gap-3"
@@ -370,18 +372,18 @@ function CalculatorContent() {
                       transition={{ delay: 0.1 }}
                     >
                       <motion.div
-                        className="w-9 h-9 md:w-11 md:h-11 rounded-xl bg-primary/10 flex items-center justify-center"
+                        className="w-8 h-8 md:w-10 md:h-10 rounded-xl bg-primary/10 flex items-center justify-center"
                         whileHover={{ scale: 1.1, rotate: 5 }}
                         transition={{ type: "spring", stiffness: 400 }}
                       >
                         <Route className="w-4 h-4 md:w-5 md:h-5 text-primary" />
                       </motion.div>
                       <div>
-                        <p className="text-xs text-muted-foreground">
+                        <p className="text-xs sm:text-sm text-muted-foreground">
                           {t("distance")}
                         </p>
                         <motion.p
-                          className="font-bold text-base md:text-lg"
+                          className="font-bold text-sm sm:text-base md:text-lg lg:text-lg xl:text-lg"
                           initial={{ opacity: 0 }}
                           animate={{ opacity: 1 }}
                           transition={{ delay: 0.2 }}
@@ -397,18 +399,18 @@ function CalculatorContent() {
                       transition={{ delay: 0.15 }}
                     >
                       <motion.div
-                        className="w-9 h-9 md:w-11 md:h-11 rounded-xl bg-primary/10 flex items-center justify-center"
+                        className="w-8 h-8 md:w-10 md:h-10 rounded-xl bg-primary/10 flex items-center justify-center"
                         whileHover={{ scale: 1.1, rotate: -5 }}
                         transition={{ type: "spring", stiffness: 400 }}
                       >
                         <Clock className="w-4 h-4 md:w-5 md:h-5 text-primary" />
                       </motion.div>
                       <div>
-                        <p className="text-xs text-muted-foreground">
+                        <p className="text-sm text-muted-foreground">
                           {t("duration")}
                         </p>
                         <motion.p
-                          className="font-bold text-base md:text-lg"
+                          className="font-bold text-sm sm:text-base md:text-lg lg:text-lg xl:text-lg"
                           initial={{ opacity: 0 }}
                           animate={{ opacity: 1 }}
                           transition={{ delay: 0.25 }}
@@ -433,8 +435,8 @@ function CalculatorContent() {
                 transition={{ delay: 0.1, type: "spring", stiffness: 300 }}
                 className="hidden md:block"
               >
-                <Card className="p-6 shadow-xl border-border/50 bg-card/80 backdrop-blur-sm">
-                  <h3 className="text-lg font-semibold mb-4 flex items-center gap-2">
+                <Card className="p-4 md:p-4 lg:p-5 xl:p-5 shadow-xl border-border/50 bg-card/80 backdrop-blur-sm">
+                  <h3 className="text-base sm:text-lg md:text-lg lg:text-xl xl:text-xl font-semibold mb-3 flex items-center gap-2">
                     <Car className="w-5 h-5 text-primary" />
                     {t("chooseRide")}
                   </h3>
@@ -458,7 +460,7 @@ function CalculatorContent() {
                           whileHover={{ scale: 1.02, x: 4 }}
                           whileTap={{ scale: 0.98 }}
                           className={cn(
-                            "w-full flex items-center gap-4 p-4 rounded-2xl border-2 transition-all duration-300 relative overflow-hidden group",
+                            "w-full flex items-center gap-3 p-3 rounded-2xl border-2 transition-all duration-300 relative overflow-hidden group",
                             isSelected
                               ? "border-primary bg-primary/5 shadow-lg shadow-primary/10"
                               : "border-transparent bg-muted/50 hover:bg-muted hover:border-border",
@@ -473,7 +475,7 @@ function CalculatorContent() {
 
                           <motion.div
                             className={cn(
-                              "w-12 h-12 rounded-xl flex items-center justify-center transition-all duration-300",
+                              "w-10 h-10 rounded-xl flex items-center justify-center transition-all duration-300",
                               isSelected ? option.color : "bg-muted",
                             )}
                             whileHover={{ rotate: [0, -5, 5, 0] }}
@@ -481,7 +483,7 @@ function CalculatorContent() {
                           >
                             <Icon
                               className={cn(
-                                "w-6 h-6 transition-colors duration-300",
+                                "w-5 h-5 transition-colors duration-300",
                                 isSelected ? "" : "text-muted-foreground",
                               )}
                             />
@@ -497,7 +499,7 @@ function CalculatorContent() {
                                 {option.name}
                               </p>
                               <motion.p
-                                className="font-bold text-lg"
+                                className="font-bold text-base sm:text-lg md:text-lg lg:text-xl xl:text-xl"
                                 animate={
                                   isSelected ? { scale: [1, 1.05, 1] } : {}
                                 }
@@ -507,10 +509,10 @@ function CalculatorContent() {
                               </motion.p>
                             </div>
                             <div className="flex items-center justify-between">
-                              <p className="text-sm text-muted-foreground">
+                              <p className="text-sm sm:text-base text-muted-foreground">
                                 {option.description}
                               </p>
-                              <p className="text-sm text-muted-foreground">
+                              <p className="text-sm sm:text-base text-muted-foreground">
                                 {option.eta}
                               </p>
                             </div>
@@ -549,7 +551,7 @@ function CalculatorContent() {
                 transition={{ delay: 0.2, type: "spring", stiffness: 300 }}
                 className="hidden md:block"
               >
-                <Card className="p-6 shadow-2xl border-0 bg-foreground text-background relative overflow-hidden">
+                <Card className="p-4 md:p-4 lg:p-5 xl:p-5 shadow-2xl border-0 bg-foreground text-background relative overflow-hidden">
                   {/* Animated gradient background */}
                   <motion.div
                     className="absolute inset-0 bg-gradient-to-br from-primary/20 via-transparent to-primary/10 opacity-50"
@@ -559,7 +561,7 @@ function CalculatorContent() {
 
                   <div className="relative z-10">
                     <div className="flex items-center justify-between mb-4">
-                      <span className="text-background/70 text-sm">
+                      <span className="text-background/70 text-sm sm:text-base">
                         {t("estimatedFare")}
                       </span>
                       <motion.div
@@ -570,7 +572,7 @@ function CalculatorContent() {
                       >
                         <Euro className="w-4 h-4" />
                         <motion.span
-                          className="text-xl font-bold"
+                          className="text-base sm:text-lg md:text-lg lg:text-xl xl:text-xl font-bold"
                           key={estimatedFare}
                           initial={{ opacity: 0, y: 10 }}
                           animate={{ opacity: 1, y: 0 }}
@@ -581,7 +583,7 @@ function CalculatorContent() {
                     </div>
                     <Button
                       size="lg"
-                      className="w-full bg-primary text-primary-foreground hover:bg-primary/90 group h-10 text-sm rounded-lg relative overflow-hidden"
+                      className="w-full bg-primary text-primary-foreground hover:bg-primary/90 group h-9 text-xs sm:text-sm rounded-lg relative overflow-hidden"
                     >
                       <motion.span
                         className="absolute inset-0 bg-white/10"
@@ -594,7 +596,7 @@ function CalculatorContent() {
                         <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
                       </span>
                     </Button>
-                    <p className="text-sm text-background/50 text-center mt-2">
+                    <p className="text-sm sm:text-base text-background/50 text-center mt-2">
                       {t("priceNote")}
                     </p>
                   </div>
@@ -605,7 +607,7 @@ function CalculatorContent() {
         </div>
 
         {/* Ride Options and Book Button at Bottom on Mobile */}
-        <div className="fixed bottom-0 left-0 right-0 z-20 md:hidden p-2">
+        <div className="fixed bottom-0 left-0 right-0 z-20 md:hidden p-1">
           {/* Ride Options */}
           <AnimatePresence mode="wait">
             {routeInfo && showRideOptions && (
@@ -616,8 +618,8 @@ function CalculatorContent() {
                 transition={{ delay: 0.1, type: "spring", stiffness: 300 }}
                 className="mb-2"
               >
-                <Card className="p-2 shadow-xl border-border/50 bg-card/90 backdrop-blur-sm">
-                  <h3 className="text-sm font-semibold mb-2 flex items-center gap-1">
+                <Card className="p-1.5 shadow-xl border-border/50 bg-card/90 backdrop-blur-sm">
+                  <h3 className="text-xs sm:text-sm font-semibold mb-1.5 flex items-center gap-1">
                     <Car className="w-3 h-3 text-primary" />
                     {t("chooseRide")}
                   </h3>
@@ -641,7 +643,7 @@ function CalculatorContent() {
                           whileHover={{ scale: 1.01 }}
                           whileTap={{ scale: 0.99 }}
                           className={cn(
-                            "w-full flex items-center gap-2 p-2 rounded-lg border transition-all duration-200 relative overflow-hidden",
+                            "w-full flex items-center gap-1.5 p-1.5 rounded-lg border transition-all duration-200 relative overflow-hidden",
                             isSelected
                               ? "border-primary bg-primary/10 shadow-sm"
                               : "border-transparent bg-muted/30 hover:bg-muted/50",
@@ -649,13 +651,13 @@ function CalculatorContent() {
                         >
                           <motion.div
                             className={cn(
-                              "w-6 h-6 rounded-lg flex items-center justify-center transition-all duration-200",
+                              "w-5 h-5 rounded-lg flex items-center justify-center transition-all duration-200",
                               isSelected ? option.color : "bg-muted",
                             )}
                           >
                             <Icon
                               className={cn(
-                                "w-3 h-3 transition-colors duration-200",
+                                "w-2.5 h-2.5 transition-colors duration-200",
                                 isSelected ? "" : "text-muted-foreground",
                               )}
                             />
@@ -664,21 +666,21 @@ function CalculatorContent() {
                             <div className="flex items-center justify-between">
                               <p
                                 className={cn(
-                                  "text-xs font-medium",
+                                  "text-xs sm:text-sm font-medium",
                                   isSelected && "text-primary",
                                 )}
                               >
                                 {option.name}
                               </p>
-                              <p className="text-xs font-bold">
+                              <p className="text-xs sm:text-sm font-bold">
                                 €{fare.toFixed(2)}
                               </p>
                             </div>
                             <div className="flex items-center justify-between">
-                              <p className="text-xs text-muted-foreground">
+                              <p className="text-xs sm:text-sm text-muted-foreground">
                                 {option.description}
                               </p>
-                              <p className="text-xs text-muted-foreground">
+                              <p className="text-xs sm:text-sm text-muted-foreground">
                                 {option.eta}
                               </p>
                             </div>
@@ -701,11 +703,11 @@ function CalculatorContent() {
                 transition={{ delay: 0.1, type: "spring", stiffness: 300 }}
                 className="mb-2"
               >
-                <Card className="p-2 shadow-xl border-border/50 bg-card/90 backdrop-blur-sm">
+                <Card className="p-1.5 shadow-xl border-border/50 bg-card/90 backdrop-blur-sm">
                   <div className="flex items-center justify-between">
                     <div className="flex items-center gap-2">
                       <Car className="w-3 h-3 text-primary" />
-                      <span className="text-sm font-medium">
+                      <span className="text-sm sm:text-base font-medium">
                         {selectedOption?.name}
                       </span>
                     </div>
@@ -713,7 +715,7 @@ function CalculatorContent() {
                       onClick={() => setShowRideOptions(true)}
                       size="sm"
                       variant="outline"
-                      className="text-xs"
+                      className="text-xs sm:text-sm"
                     >
                       {t("change")}
                     </Button>
@@ -732,7 +734,7 @@ function CalculatorContent() {
                 exit={{ opacity: 0, y: 20, scale: 0.95 }}
                 transition={{ delay: 0.2, type: "spring", stiffness: 300 }}
               >
-                <Card className="p-2 shadow-2xl border-0 bg-foreground text-background relative overflow-hidden">
+                <Card className="p-1.5 shadow-2xl border-0 bg-foreground text-background relative overflow-hidden">
                   {/* Animated gradient background */}
                   <motion.div
                     className="absolute inset-0 bg-gradient-to-br from-primary/20 via-transparent to-primary/10 opacity-50"
@@ -742,7 +744,7 @@ function CalculatorContent() {
 
                   <div className="relative z-10">
                     <div className="flex items-center justify-between mb-1">
-                      <span className="text-background/70 text-xs">
+                      <span className="text-background/70 text-xs sm:text-sm">
                         {t("estimatedFare")}
                       </span>
                       <motion.div
@@ -753,7 +755,7 @@ function CalculatorContent() {
                       >
                         <Euro className="w-3 h-3" />
                         <motion.span
-                          className="text-lg font-bold"
+                          className="text-sm sm:text-base md:text-base lg:text-lg xl:text-lg font-bold"
                           key={estimatedFare}
                           initial={{ opacity: 0, y: 10 }}
                           animate={{ opacity: 1, y: 0 }}
@@ -764,7 +766,7 @@ function CalculatorContent() {
                     </div>
                     <Button
                       size="lg"
-                      className="w-full bg-primary text-primary-foreground hover:bg-primary/90 group h-8 text-xs rounded-lg relative overflow-hidden"
+                      className="w-full bg-primary text-primary-foreground hover:bg-primary/90 group h-7 text-xs sm:text-sm rounded-lg relative overflow-hidden"
                     >
                       <motion.span
                         className="absolute inset-0 bg-white/10"
@@ -777,7 +779,7 @@ function CalculatorContent() {
                         <ArrowRight className="w-3 h-3 group-hover:translate-x-1 transition-transform" />
                       </span>
                     </Button>
-                    <p className="text-xs text-background/50 text-center mt-1">
+                    <p className="text-xs sm:text-sm text-background/50 text-center mt-1">
                       {t("priceNote")}
                     </p>
                   </div>
@@ -822,24 +824,24 @@ export default function CalculatorPage() {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5 }}
         >
-          <Card className="p-8 max-w-md text-center shadow-2xl border-border/50 bg-card/80 backdrop-blur-sm">
+          <Card className="p-6 max-w-sm text-center shadow-2xl border-border/50 bg-card/80 backdrop-blur-sm">
             <motion.div
-              className="w-16 h-16 rounded-2xl bg-primary/10 flex items-center justify-center mx-auto mb-4"
+              className="w-12 h-12 rounded-2xl bg-primary/10 flex items-center justify-center mx-auto mb-3"
               animate={{ rotate: [0, 5, -5, 0] }}
               transition={{ duration: 2, repeat: Infinity }}
             >
-              <MapPin className="w-8 h-8 text-primary" />
+              <MapPin className="w-6 h-6 text-primary" />
             </motion.div>
-            <h2 className="text-xl font-semibold mb-2">
+            <h2 className="text-base sm:text-lg md:text-lg lg:text-xl xl:text-xl font-semibold mb-2">
               Configuration Required
             </h2>
-            <p className="text-muted-foreground mb-4">
+            <p className="text-muted-foreground text-sm sm:text-base mb-3">
               Please add your Mapbox access token to the environment variables.
             </p>
-            <code className="block bg-muted p-4 rounded-xl text-sm font-mono">
+            <code className="block bg-muted p-3 rounded-xl text-xs sm:text-sm font-mono">
               NEXT_PUBLIC_MAPBOX_ACCESS_TOKEN=your_token
             </code>
-            <p className="text-xs text-muted-foreground mt-4">
+            <p className="text-xs sm:text-sm text-muted-foreground mt-3">
               Get your token at{" "}
               <a
                 href="https://account.mapbox.com/access-tokens/"

@@ -12,17 +12,25 @@ const stats = [
   { key: "co2", value: 100, suffix: "%" },
 ];
 
-function AnimatedCounter({ value, suffix, delay = 0 }: { value: number; suffix: string; delay?: number }) {
+function AnimatedCounter({
+  value,
+  suffix,
+  delay = 0,
+}: {
+  value: number;
+  suffix: string;
+  delay?: number;
+}) {
   const ref = useRef<HTMLParagraphElement>(null);
   const isInView = useInView(ref, { once: true, margin: "-100px" });
   const [hasAnimated, setHasAnimated] = useState(false);
-  
+
   const springValue = useSpring(0, {
     stiffness: 100,
     damping: 30,
     restDelta: 0.001,
   });
-  
+
   const displayValue = useTransform(springValue, (v) => Math.round(v));
   const [count, setCount] = useState(0);
 
@@ -57,7 +65,10 @@ export function StatsSection() {
   const isInView = useInView(sectionRef, { once: true, margin: "-100px" });
 
   return (
-    <section ref={sectionRef} className="py-20 lg:py-28 relative overflow-hidden">
+    <section
+      ref={sectionRef}
+      className="py-20 md:py-24 lg:py-26 xl:py-28 relative overflow-hidden"
+    >
       {/* Background decoration with subtle animation */}
       <motion.div
         className="absolute inset-0 -z-10 bg-gradient-to-b from-muted/50 via-muted/30 to-transparent"
@@ -67,7 +78,7 @@ export function StatsSection() {
       />
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="grid lg:grid-cols-2 gap-12 items-center">
+        <div className="grid lg:grid-cols-2 gap-12 md:gap-10 lg:gap-12 xl:gap-12 items-center">
           {/* Left - Content */}
           <motion.div
             initial={{ opacity: 0, y: 40 }}
@@ -90,7 +101,7 @@ export function StatsSection() {
             </motion.div>
 
             <motion.h2
-              className="text-3xl lg:text-5xl font-bold mb-4 leading-tight"
+              className="text-3xl md:text-4xl lg:text-4xl xl:text-5xl font-bold mb-4 leading-tight"
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
@@ -125,7 +136,10 @@ export function StatsSection() {
               viewport={{ once: true }}
               transition={{ duration: 0.6, delay: 0.3 }}
             >
-              <Button variant="outline" className="rounded-full group overflow-hidden relative">
+              <Button
+                variant="outline"
+                className="rounded-full group overflow-hidden relative"
+              >
                 <motion.span
                   className="absolute inset-0 bg-primary/5"
                   initial={{ x: "-100%" }}
@@ -164,12 +178,10 @@ export function StatsSection() {
                     y: -8,
                     transition: { type: "spring", stiffness: 400, damping: 20 },
                   }}
-                  className="relative p-6 rounded-3xl border border-border bg-card/50 backdrop-blur-sm text-center group cursor-default"
+                  className="relative p-6 md:p-5 lg:p-6 xl:p-6 rounded-3xl border border-border bg-card/50 backdrop-blur-sm text-center group cursor-default"
                 >
                   {/* Hover gradient */}
-                  <motion.div
-                    className="absolute inset-0 rounded-3xl bg-gradient-to-br from-primary/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"
-                  />
+                  <motion.div className="absolute inset-0 rounded-3xl bg-gradient-to-br from-primary/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
 
                   <div className="relative z-10">
                     <AnimatedCounter

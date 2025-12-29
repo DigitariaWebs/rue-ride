@@ -12,7 +12,13 @@ const exploreFeatures = [
   { key: "payment", icon: CreditCard, color: "text-blue-500" },
 ];
 
-function FloatingCard({ children, delay = 0 }: { children: React.ReactNode; delay?: number }) {
+function FloatingCard({
+  children,
+  delay = 0,
+}: {
+  children: React.ReactNode;
+  delay?: number;
+}) {
   return (
     <motion.div
       animate={{ y: [0, -8, 0] }}
@@ -72,12 +78,13 @@ function FeatureCard({
       style={{ rotateX, rotateY, transformStyle: "preserve-3d" }}
       className="perspective-1000"
     >
-      <motion.div whileHover={{ y: -8 }} transition={{ type: "spring", stiffness: 400, damping: 20 }}>
-        <Card className="relative p-8 h-full border-border bg-card/50 backdrop-blur-sm hover:border-primary/30 hover:shadow-xl transition-all duration-300 group overflow-hidden">
+      <motion.div
+        whileHover={{ y: -8 }}
+        transition={{ type: "spring", stiffness: 400, damping: 20 }}
+      >
+        <Card className="relative p-8 md:p-7 lg:p-8 xl:p-8 h-full border-border bg-card/50 backdrop-blur-sm hover:border-primary/30 hover:shadow-xl transition-all duration-300 group overflow-hidden">
           {/* Animated gradient background */}
-          <motion.div
-            className="absolute inset-0 bg-gradient-to-br from-primary/5 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"
-          />
+          <motion.div className="absolute inset-0 bg-gradient-to-br from-primary/5 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
 
           <motion.div
             className="w-14 h-14 rounded-2xl bg-primary/10 flex items-center justify-center mb-6 group-hover:bg-primary/20 transition-colors"
@@ -116,7 +123,9 @@ function FeatureCard({
                   animate={{ scale: [1, 1.3, 1] }}
                   transition={{ duration: 2, repeat: Infinity, delay: i * 0.3 }}
                 />
-                <span className="text-muted-foreground">{t(`${feature.key}.feature${item}`)}</span>
+                <span className="text-muted-foreground">
+                  {t(`${feature.key}.feature${item}`)}
+                </span>
               </motion.div>
             ))}
           </div>
@@ -147,22 +156,29 @@ function TestimonialCard({
       transition={{ duration: 0.5, delay }}
     >
       <FloatingCard delay={index * 0.5}>
-        <motion.div whileHover={{ scale: 1.02 }} transition={{ type: "spring", stiffness: 400 }}>
+        <motion.div
+          whileHover={{ scale: 1.02 }}
+          transition={{ type: "spring", stiffness: 400 }}
+        >
           <Card className="relative p-6 border-border bg-card/50 backdrop-blur-sm group hover:border-primary/30 hover:shadow-lg transition-all duration-300 overflow-hidden">
             {/* Shine effect */}
-            <motion.div
-              className="absolute inset-0 bg-gradient-to-r from-transparent via-white/5 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-700"
-            />
+            <motion.div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/5 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-700" />
 
             <motion.div
               initial={{ scale: 0.5, rotate: -20 }}
               whileInView={{ scale: 1, rotate: 0 }}
               viewport={{ once: true }}
-              transition={{ delay: delay + 0.2, type: "spring", stiffness: 200 }}
+              transition={{
+                delay: delay + 0.2,
+                type: "spring",
+                stiffness: 200,
+              }}
             >
               <Quote className="w-8 h-8 text-primary/30 mb-4 group-hover:text-primary/50 transition-colors" />
             </motion.div>
-            <p className="text-muted-foreground mb-6 leading-relaxed">&ldquo;{quote}&rdquo;</p>
+            <p className="text-muted-foreground mb-6 leading-relaxed">
+              &ldquo;{quote}&rdquo;
+            </p>
             <motion.div
               className="flex items-center gap-3"
               initial={{ opacity: 0, x: -20 }}
@@ -192,7 +208,7 @@ export function ExploreSection() {
   const t = useTranslations("explore");
 
   return (
-    <section className="py-20 lg:py-28 relative overflow-hidden">
+    <section className="py-20 md:py-24 lg:py-26 xl:py-28 relative overflow-hidden">
       {/* Animated background blobs */}
       <div className="absolute inset-0 -z-10">
         <motion.div
@@ -214,7 +230,7 @@ export function ExploreSection() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.7 }}
-          className="text-center mb-16"
+          className="text-center mb-16 md:mb-14 lg:mb-16 xl:mb-16"
         >
           <motion.div
             className="inline-flex items-center gap-2 px-4 py-2 rounded-full border border-border bg-card/50 backdrop-blur-sm text-sm mb-6"
@@ -223,7 +239,7 @@ export function ExploreSection() {
             <span className="text-primary font-medium">{t("badge")}</span>
           </motion.div>
           <motion.h2
-            className="text-3xl lg:text-5xl font-bold mb-4"
+            className="text-3xl md:text-4xl lg:text-4.5xl xl:text-5xl font-bold mb-4"
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
@@ -253,14 +269,19 @@ export function ExploreSection() {
         </motion.div>
 
         {/* Features Grid */}
-        <div className="grid md:grid-cols-3 gap-6 lg:gap-8 mb-16">
+        <div className="grid md:grid-cols-3 gap-6 md:gap-7 lg:gap-8 xl:gap-8 mb-16 md:mb-14 lg:mb-16 xl:mb-16">
           {exploreFeatures.map((feature, index) => (
-            <FeatureCard key={feature.key} feature={feature} index={index} t={t} />
+            <FeatureCard
+              key={feature.key}
+              feature={feature}
+              index={index}
+              t={t}
+            />
           ))}
         </div>
 
         {/* Testimonials Row */}
-        <div className="grid md:grid-cols-2 gap-6">
+        <div className="grid md:grid-cols-2 gap-6 md:gap-5 lg:gap-6 xl:gap-6">
           {[1, 2].map((testimonial, index) => (
             <TestimonialCard
               key={testimonial}

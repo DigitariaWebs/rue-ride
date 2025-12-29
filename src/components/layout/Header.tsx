@@ -32,7 +32,7 @@ export function Header() {
   return (
     <header className="fixed top-0 left-0 right-0 z-50 bg-background/80 backdrop-blur-lg border-b border-border/50">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex items-center justify-between h-16 lg:h-20">
+        <div className="flex items-center justify-between h-16 md:h-18 lg:h-20 xl:h-20">
           {/* Logo */}
           <a href="#" className="flex items-center">
             <motion.div
@@ -44,7 +44,7 @@ export function Header() {
                 alt="Rue Ride"
                 width={160}
                 height={56}
-                className="h-11 lg:h-14 w-auto dark:brightness-0 dark:invert"
+                className="h-11 md:h-12 lg:h-14 xl:h-14 w-auto dark:brightness-0 dark:invert"
                 priority
               />
             </motion.div>
@@ -144,7 +144,11 @@ export function Header() {
               onClick={() => setIsMenuOpen(!isMenuOpen)}
               className="p-2 rounded-lg hover:bg-muted transition-colors"
             >
-              {isMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
+              {isMenuOpen ? (
+                <X className="w-6 h-6" />
+              ) : (
+                <Menu className="w-6 h-6" />
+              )}
             </button>
           </div>
         </div>

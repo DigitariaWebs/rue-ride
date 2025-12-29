@@ -58,7 +58,10 @@ export function GeocoderInput({
   // Handle click outside
   useEffect(() => {
     function handleClickOutside(event: MouseEvent) {
-      if (containerRef.current && !containerRef.current.contains(event.target as Node)) {
+      if (
+        containerRef.current &&
+        !containerRef.current.contains(event.target as Node)
+      ) {
         setIsOpen(false);
         setIsFocused(false);
       }
@@ -177,8 +180,8 @@ export function GeocoderInput({
           onBlur={() => setIsFocused(false)}
           placeholder={placeholder}
           className={cn(
-            "flex h-14 w-full rounded-xl border border-input bg-background pl-12 pr-12 py-3 text-base ring-offset-background placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50 transition-all duration-200",
-            isFocused && "border-primary/50 shadow-lg shadow-primary/5"
+            "flex h-14 w-full rounded-xl border border-input bg-background pl-12 pr-12 py-3 text-xs md:text-sm lg:text-base ring-offset-background placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50 transition-all duration-200",
+            isFocused && "border-primary/50 shadow-lg shadow-primary/5",
           )}
         />
 
@@ -231,7 +234,7 @@ export function GeocoderInput({
                 onClick={() => handleSelect(feature)}
                 className={cn(
                   "w-full flex items-start gap-3 px-4 py-3 text-left hover:bg-primary/5 transition-colors group",
-                  index !== suggestions.length - 1 && "border-b border-border"
+                  index !== suggestions.length - 1 && "border-b border-border",
                 )}
               >
                 <motion.div

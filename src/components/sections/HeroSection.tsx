@@ -2,7 +2,16 @@
 
 import { useTranslations } from "next-intl";
 import { motion, useScroll, useTransform, useSpring } from "framer-motion";
-import { ArrowRight, Star, Car, Zap, Bike, MapPin, UtensilsCrossed, Package } from "lucide-react";
+import {
+  ArrowRight,
+  Star,
+  Car,
+  Zap,
+  Bike,
+  MapPin,
+  UtensilsCrossed,
+  Package,
+} from "lucide-react";
 import Link from "next/link";
 import Image from "next/image";
 import { useRef } from "react";
@@ -36,14 +45,20 @@ export function HeroSection() {
   const bgScale = useTransform(scrollYProgress, [0, 0.5], [1, 1.1]);
 
   // Smooth mouse following
-  const mouseX = useSpring(mouse.normalizedX * 20, { stiffness: 100, damping: 30 });
-  const mouseY = useSpring(mouse.normalizedY * 20, { stiffness: 100, damping: 30 });
+  const mouseX = useSpring(mouse.normalizedX * 20, {
+    stiffness: 100,
+    damping: 30,
+  });
+  const mouseY = useSpring(mouse.normalizedY * 20, {
+    stiffness: 100,
+    damping: 30,
+  });
 
   return (
-    <section 
+    <section
       ref={sectionRef}
-      id="home" 
-      className="relative pt-24 lg:pt-32 pb-16 overflow-hidden"
+      id="home"
+      className="relative pt-24 md:pt-28 lg:pt-32 xl:pt-32 pb-16 md:pb-18 lg:pb-16 xl:pb-16 overflow-hidden"
     >
       {/* Animated Background decorations */}
       <div className="absolute inset-0 -z-10">
@@ -55,7 +70,7 @@ export function HeroSection() {
           style={{ y: bgY2, x: mouseY }}
           className="absolute bottom-0 left-0 w-[400px] h-[400px] bg-accent/5 rounded-full blur-3xl"
         />
-        
+
         {/* Floating particles */}
         {[...Array(6)].map((_, i) => (
           <motion.div
@@ -80,8 +95,8 @@ export function HeroSection() {
         ))}
       </div>
 
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-start">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 xl:px-8">
+        <div className="grid lg:grid-cols-2 gap-12 md:gap-14 lg:gap-16 xl:gap-16 items-start">
           {/* Left Column - Content */}
           <motion.div
             initial={{ opacity: 0, x: -20 }}
@@ -107,23 +122,27 @@ export function HeroSection() {
             </motion.div>
 
             {/* Top Badge with subtle animation */}
-            <motion.div 
+            <motion.div
               className="inline-flex items-center gap-2 px-4 py-2 rounded-full border border-border bg-card/50 backdrop-blur-sm text-sm mb-6"
               whileHover={{ scale: 1.02, borderColor: "hsl(var(--primary))" }}
               transition={{ type: "spring", stiffness: 400, damping: 25 }}
             >
               <span className="text-muted-foreground">{t("tagline")}</span>
-              <motion.span 
+              <motion.span
                 className="text-primary font-medium flex items-center gap-1"
                 animate={{ x: [0, 3, 0] }}
-                transition={{ duration: 1.5, repeat: Infinity, ease: "easeInOut" }}
+                transition={{
+                  duration: 1.5,
+                  repeat: Infinity,
+                  ease: "easeInOut",
+                }}
               >
                 {t("explore")} <ArrowRight className="w-3 h-3" />
               </motion.span>
             </motion.div>
 
             {/* Headline with staggered animation */}
-            <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold tracking-tight leading-[1.1] mb-6">
+            <h1 className="text-4xl sm:text-5xl md:text-5.5xl lg:text-6xl xl:text-6xl font-bold tracking-tight leading-[1.1] mb-6">
               <motion.span
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
@@ -169,7 +188,10 @@ export function HeroSection() {
               className="flex flex-wrap gap-4 mb-8"
             >
               <Link href="/calculator">
-                <Button size="lg" className="rounded-full px-8 group relative overflow-hidden">
+                <Button
+                  size="lg"
+                  className="rounded-full px-8 group relative overflow-hidden"
+                >
                   <motion.span
                     className="absolute inset-0 bg-primary-foreground/10"
                     initial={{ x: "-100%" }}
@@ -208,7 +230,9 @@ export function HeroSection() {
                   </motion.div>
                 ))}
               </div>
-              <span className="text-sm text-muted-foreground">{t("reviews", { count: "100" })}</span>
+              <span className="text-sm text-muted-foreground">
+                {t("reviews", { count: "100" })}
+              </span>
             </motion.div>
           </motion.div>
 
@@ -221,14 +245,19 @@ export function HeroSection() {
           >
             {/* Services Card with hover effects */}
             <motion.div
-              className="bg-card rounded-3xl border border-border p-6 mb-6 shadow-lg"
-              whileHover={{ y: -4, boxShadow: "0 25px 50px -12px rgba(0, 0, 0, 0.15)" }}
+              className="bg-card rounded-3xl border border-border p-6 md:p-5 lg:p-6 xl:p-6 mb-6 shadow-lg"
+              whileHover={{
+                y: -4,
+                boxShadow: "0 25px 50px -12px rgba(0, 0, 0, 0.15)",
+              }}
               transition={{ type: "spring", stiffness: 300, damping: 25 }}
             >
               <h3 className="font-semibold mb-2">{t("servicesTitle")}</h3>
-              <p className="text-sm text-muted-foreground mb-4">{t("servicesSubtitle")}</p>
+              <p className="text-sm text-muted-foreground mb-4">
+                {t("servicesSubtitle")}
+              </p>
 
-              <div className="grid grid-cols-3 gap-3">
+              <div className="grid grid-cols-3 gap-3 md:gap-2 lg:gap-3 xl:gap-3">
                 {quickServices.map((service, index) => {
                   const Icon = service.icon;
                   return (
@@ -248,7 +277,9 @@ export function HeroSection() {
                       >
                         <Icon className="w-6 h-6 text-muted-foreground group-hover:text-primary transition-colors" />
                       </motion.div>
-                      <span className="text-xs font-medium text-center">{tServices(service.key)}</span>
+                      <span className="text-xs font-medium text-center">
+                        {tServices(service.key)}
+                      </span>
                     </motion.div>
                   );
                 })}
@@ -271,7 +302,11 @@ export function HeroSection() {
                 <motion.div
                   className="bg-card rounded-2xl p-4 shadow-xl border border-border"
                   animate={{ y: [0, -8, 0] }}
-                  transition={{ duration: 3, repeat: Infinity, ease: "easeInOut" }}
+                  transition={{
+                    duration: 3,
+                    repeat: Infinity,
+                    ease: "easeInOut",
+                  }}
                   whileHover={{ scale: 1.05 }}
                 >
                   <div className="flex items-center gap-3">
@@ -287,7 +322,9 @@ export function HeroSection() {
                     </div>
                     <div>
                       <p className="text-sm font-medium">{t("captainOnWay")}</p>
-                      <p className="text-xs text-muted-foreground">🚗 • 3 min</p>
+                      <p className="text-xs text-muted-foreground">
+                        🚗 • 3 min
+                      </p>
                     </div>
                   </div>
                 </motion.div>
