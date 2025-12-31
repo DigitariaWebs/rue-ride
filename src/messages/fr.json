@@ -27,7 +27,7 @@
     }
   },
   "metadata": {
-    "title": "Rue Ride - Votre Course à Paris Vous Attend",
+    "title": "VTC Ride - Votre Course à Paris Vous Attend",
     "description": "Des trajets simples et fiables à travers Paris. Calculez votre tarif et réservez en quelques secondes."
   },
   "header": {
@@ -39,12 +39,12 @@
     "getStarted": "Commencer"
   },
   "hero": {
-    "tagline": "Découvrez l'App Rue Ride",
+    "tagline": "Découvrez l'App VTC Ride",
     "explore": "Explorer",
     "headlinePart1": "Simple.",
     "headlinePart2": "Fiable.",
     "headlinePart3": "Votre Course Vous Attend.",
-    "description": "Rue Ride vous connecte à des courses fiables à travers Paris, à tout moment, n'importe où. Essayez notre calculateur et découvrez l'avenir du voyage sans tracas.",
+    "description": "VTC Ride vous connecte à des courses fiables à travers Paris, à tout moment, n'importe où. Essayez notre calculateur et découvrez l'avenir du voyage sans tracas.",
     "cta": "En Savoir Plus",
     "downloadApp": "Essayez le Calculateur",
     "reviews": "Basé sur {count}+ avis",
@@ -53,7 +53,7 @@
     "captainOnWay": "Votre Chauffeur est en route"
   },
   "stats": {
-    "badge": "Pourquoi Rue Ride",
+    "badge": "Pourquoi VTC Ride",
     "title": "Des courses de qualité,",
     "titleHighlight": "Des chauffeurs de confiance",
     "description": "Nous construisons un service de transport sur lequel vous pouvez compter. Chaque chauffeur est soigneusement vérifié, chaque course est suivie, et votre confort est notre priorité.",
@@ -89,14 +89,30 @@
     "badge": "Nos Services",
     "title": "Les services que nous offrons",
     "subtitle": "Pour ceux qui savent ce qu'ils veulent.",
-    "rides": "Courses",
-    "ridesPlus": "Courses Plus",
-    "ebike": "Vélo Élec.",
-    "cityToCity": "Ville à Ville",
-    "send": "Colis",
-    "food": "Livraison Repas",
-    "groceries": "Courses",
-    "scheduled": "Programmé",
+    "rides": {
+      "title": "Course Privé",
+      "description": "Transport privé confortable et sécurisé pour vos déplacements personnels."
+    },
+    "ridesPlus": {
+      "title": "Transport des Enfants",
+      "description": "Service spécialisé pour le transport sécurisé des enfants avec chauffeurs formés."
+    },
+    "ebike": {
+      "title": "Transport Handicapés",
+      "description": "Véhicules adaptés et chauffeurs expérimentés pour le transport des personnes handicapées."
+    },
+    "cityToCity": {
+      "title": "Livraison Repas",
+      "description": "Livraison rapide et fiable de vos repas préférés directement à votre porte."
+    },
+    "send": {
+      "title": "Colis",
+      "description": "Envoi sécurisé de colis et paquets avec suivi en temps réel."
+    },
+    "food": {
+      "title": "Pets (Animaux)",
+      "description": "Transport confortable pour vos animaux de compagnie avec soin et attention."
+    },
     "captainOnWay": "Votre Chauffeur est en route"
   },
   "calculator": {
@@ -123,40 +139,12 @@
   "explore": {
     "badge": "Explorez Nos Services",
     "title": "Votre Course. Votre Choix.",
-    "titleHighlight": "Explorez les Services Rue Ride.",
-    "subtitle": "Rue Ride offre une gamme d'options de transport adaptées à vos besoins et votre budget.",
-    "anywhere": {
-      "title": "Allez Partout",
-      "description": "Profitez de la possibilité de réserver des courses dans tout Paris et au-delà. Explorez les monuments historiques ou les coins cachés en toute simplicité.",
-      "feature1": "Tous les quartiers de Paris couverts",
-      "feature2": "Transferts aéroports et gares"
-    },
-    "anytime": {
-      "title": "Voyagez à Toute Heure",
-      "description": "Jour et nuit, qu'il pleuve ou qu'il vente. Nos chauffeurs sont toujours prêts à vous conduire où vous voulez, 24h/24.",
-      "feature1": "Disponibilité 24h/24 7j/7",
-      "feature2": "Planifiez vos courses à l'avance"
-    },
-    "payment": {
-      "title": "Payez Comme Vous Voulez",
-      "description": "Plusieurs options de paiement pour votre commodité. Carte, espèces ou portefeuille numérique - ce qui vous convient le mieux.",
-      "feature1": "Paiements par carte sécurisés",
-      "feature2": "Espèces et portefeuilles numériques"
-    },
-    "testimonial1": {
-      "quote": "J'ai essayé d'autres apps de VTC, mais Rue Ride est de loin la meilleure. Les prix sont compétitifs, le service est fiable, et j'adore pouvoir choisir mon type de véhicule préféré.",
-      "name": "Marie D.",
-      "role": "Utilisatrice Régulière"
-    },
-    "testimonial2": {
-      "quote": "En tant que femme, je me sens en sécurité avec Rue Ride. L'app fournit un suivi en temps réel et me permet de partager les détails de ma course avec mes proches. Les chauffeurs sont toujours respectueux.",
-      "name": "Sophie L.",
-      "role": "Utilisatrice Quotidienne"
-    }
+    "titleHighlight": "Explorez les Services VTC Ride.",
+    "subtitle": "VTC Ride offre une gamme d'options de transport adaptées à vos besoins."
   },
   "features": {
     "badge": "Pourquoi Nous Choisir",
-    "title": "Pourquoi Choisir Rue Ride ?",
+    "title": "Pourquoi Choisir VTC Ride ?",
     "subtitle": "Nous construisons le service VTC que Paris mérite",
     "safety": {
       "title": "Sûr et Sécurisé",
@@ -175,43 +163,24 @@
       "description": "Notre équipe d'assistance est toujours disponible pour vous aider."
     },
     "payment": {
-      "title": "Paiement Facile",
-      "description": "Payez par carte, espèces ou portefeuille numérique. Ce qui vous convient."
+      "title": "Chauffeurs VTC Professionnels",
+      "description": "Nos chauffeurs sont des professionnels VTC agréés et formés pour un service excellent."
     },
     "eco": {
       "title": "Écologique",
       "description": "Choisissez nos options de véhicules électriques pour un trajet plus vert."
     }
   },
-  "testimonials": {
-    "badge": "Premiers Retours",
-    "title": "Ce Que Disent Nos Bêta-Testeurs",
-    "subtitle": "Nous avons testé avec un groupe sélectionné d'utilisateurs. Voici leurs impressions.",
-    "review1": {
-      "quote": "Rue Ride a changé ma vie ! Je redoutais les embouteillages aux heures de pointe, mais maintenant je me détends et laisse Rue Ride conduire. L'app est super facile à utiliser.",
-      "name": "Lucas B.",
-      "location": "Paris, 16ème"
-    },
-    "review2": {
-      "quote": "Rue Ride a fait une énorme différence dans ma vie. C'est pratique, abordable, et cela a créé des opportunités d'emploi pour beaucoup de gens. Excellent service !",
-      "name": "Amélie P.",
-      "location": "Paris, Le Marais"
-    },
-    "review3": {
-      "quote": "Les chauffeurs sont toujours professionnels et les voitures sont propres. J'utilise Rue Ride pour tous mes transferts aéroport maintenant. Hautement recommandé !",
-      "name": "Thomas M.",
-      "location": "Paris, 8ème"
-    }
-  },
+
   "faq": {
     "badge": "FAQ",
-    "title": "FAQ Rue Ride",
+    "title": "FAQ VTC Ride",
     "subtitle": "Trouvez les réponses à vos questions ici. Si vous ne trouvez pas ce que vous cherchez, contactez notre équipe de support.",
     "stillQuestions": "Vous avez encore des questions ?",
     "contactUs": "Contactez notre équipe de support →",
     "booking": {
       "question": "Comment réserver une course ?",
-      "answer": "Téléchargez l'app Rue Ride sur l'App Store ou Google Play. Inscrivez-vous avec votre numéro de téléphone, entrez votre lieu de prise en charge et votre destination, choisissez votre type de course et confirmez. Un chauffeur vous sera assigné en quelques minutes."
+      "answer": "Téléchargez l'app VTC Ride sur l'App Store ou Google Play. Inscrivez-vous avec votre numéro de téléphone, entrez votre lieu de prise en charge et votre destination, choisissez votre type de course et confirmez. Un chauffeur vous sera assigné en quelques minutes."
     },
     "payment": {
       "question": "Comment puis-je changer mon mode de paiement ?",
@@ -222,11 +191,11 @@
       "answer": "Si votre chauffeur n'arrive pas dans les 10 minutes, vous pouvez annuler gratuitement et réserver à nouveau. Pour les objets oubliés, utilisez la fonction 'Objets Trouvés' dans l'app ou contactez notre équipe de support 24h/24."
     },
     "driver": {
-      "question": "Comment devenir chauffeur Rue Ride ?",
+      "question": "Comment devenir chauffeur VTC Ride ?",
       "answer": "Visitez notre site web ou téléchargez l'app Chauffeur. Vous aurez besoin d'un permis de conduire valide, d'une preuve d'assurance et de passer notre vérification des antécédents. La plupart des candidatures sont traitées sous 48 heures."
     },
     "safety": {
-      "question": "Comment Rue Ride assure-t-il la sécurité des passagers ?",
+      "question": "Comment VTC Ride assure-t-il la sécurité des passagers ?",
       "answer": "Tous les chauffeurs font l'objet d'une vérification approfondie des antécédents. L'app fournit un suivi en temps réel, un bouton d'urgence et la possibilité de partager votre trajet avec vos proches. Toutes les courses sont surveillées par GPS."
     },
     "support": {
@@ -276,7 +245,7 @@
     "business": "Entreprise",
     "delivery": "Livraison",
     "social": "Nos Réseaux",
-    "copyright": "© {year} Rue Ride. Tous droits réservés.",
+    "copyright": "© {year} VTC Ride. Tous droits réservés.",
     "madeWith": "Fait avec ❤️ à Paris"
   }
 }

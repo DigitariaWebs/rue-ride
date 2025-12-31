@@ -124,7 +124,7 @@ export function FeaturesSection() {
     <section id="about" className="py-24 md:py-28 lg:py-30 xl:py-32 relative">
       {/* Background */}
       <motion.div
-        className="absolute inset-0 -z-10 bg-gradient-to-b from-transparent via-muted/30 to-transparent"
+        className="absolute inset-0 -z-10 bg-linear-to-b from-transparent via-muted/30 to-transparent"
         initial={{ opacity: 0 }}
         whileInView={{ opacity: 1 }}
         viewport={{ once: true }}
@@ -192,7 +192,7 @@ export function FeaturesSection() {
                   >
                     {/* Gradient background on hover */}
                     <motion.div
-                      className={`absolute inset-0 rounded-3xl bg-gradient-to-br ${feature.gradient} opacity-0 group-hover:opacity-100 transition-opacity duration-500`}
+                      className={`absolute inset-0 rounded-3xl bg-linear-to-br ${feature.gradient} opacity-0 group-hover:opacity-100 transition-opacity duration-500`}
                     />
 
                     <div

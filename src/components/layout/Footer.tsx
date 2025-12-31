@@ -3,9 +3,11 @@
 import { useTranslations } from "next-intl";
 import { Facebook, Twitter, Instagram, Linkedin, MapPin } from "lucide-react";
 import Image from "next/image";
+import { useTheme } from "@/components/ThemeProvider";
 
 export function Footer() {
   const t = useTranslations("footer");
+  const { theme } = useTheme();
   const currentYear = new Date().getFullYear();
 
   const footerLinks = {
@@ -45,11 +47,11 @@ export function Footer() {
           <div className="col-span-2 md:col-span-3 lg:col-span-2">
             <a href="#" className="inline-block mb-6">
               <Image
-                src="/logo.png"
-                alt="Rue Ride"
+                src={theme === "dark" ? "/logo-dark.png" : "/logo-light.png"}
+                alt="VTC Ride"
                 width={180}
                 height={64}
-                className="h-16 w-auto dark:brightness-0 dark:invert"
+                className="h-16 w-auto"
               />
             </a>
             <p className="text-muted-foreground leading-relaxed max-w-sm mb-4">

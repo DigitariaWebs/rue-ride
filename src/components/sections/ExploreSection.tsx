@@ -2,210 +2,102 @@
 
 import { useTranslations } from "next-intl";
 import { motion, useMotionValue, useSpring, useTransform } from "framer-motion";
-import { MapPin, Clock, CreditCard, Quote } from "lucide-react";
-import { Card } from "@/components/ui/card";
+import {
+  Car,
+  Users,
+  Accessibility,
+  Package,
+  UtensilsCrossed,
+  PawPrint,
+} from "lucide-react";
 import { useRef } from "react";
 
-const exploreFeatures = [
-  { key: "anywhere", icon: MapPin, color: "text-emerald-500" },
-  { key: "anytime", icon: Clock, color: "text-amber-500" },
-  { key: "payment", icon: CreditCard, color: "text-blue-500" },
+const services = [
+  {
+    key: "rides",
+    icon: Car,
+    color: "bg-emerald-500/10 text-emerald-500",
+    hoverColor: "group-hover:bg-emerald-500/20",
+  },
+  {
+    key: "ridesPlus",
+    icon: Users,
+    color: "bg-amber-500/10 text-amber-500",
+    hoverColor: "group-hover:bg-amber-500/20",
+  },
+  {
+    key: "ebike",
+    icon: Accessibility,
+    color: "bg-blue-500/10 text-blue-500",
+    hoverColor: "group-hover:bg-blue-500/20",
+  },
+  {
+    key: "cityToCity",
+    icon: UtensilsCrossed,
+    color: "bg-purple-500/10 text-purple-500",
+    hoverColor: "group-hover:bg-purple-500/20",
+  },
+  {
+    key: "send",
+    icon: Package,
+    color: "bg-rose-500/10 text-rose-500",
+    hoverColor: "group-hover:bg-rose-500/20",
+  },
+  {
+    key: "food",
+    icon: PawPrint,
+    color: "bg-orange-500/10 text-orange-500",
+    hoverColor: "group-hover:bg-orange-500/20",
+  },
 ];
 
-function FloatingCard({
+function MagneticCard({
   children,
-  delay = 0,
+  className,
 }: {
   children: React.ReactNode;
-  delay?: number;
+  className?: string;
 }) {
-  return (
-    <motion.div
-      animate={{ y: [0, -8, 0] }}
-      transition={{
-        duration: 4,
-        repeat: Infinity,
-        delay,
-        ease: "easeInOut",
-      }}
-    >
-      {children}
-    </motion.div>
-  );
-}
-
-function FeatureCard({
-  feature,
-  index,
-  t,
-}: {
-  feature: (typeof exploreFeatures)[0];
-  index: number;
-  t: (key: string) => string;
-}) {
-  const Icon = feature.icon;
   const ref = useRef<HTMLDivElement>(null);
-  const mouseX = useMotionValue(0);
-  const mouseY = useMotionValue(0);
+  const x = useMotionValue(0);
+  const y = useMotionValue(0);
 
-  const springConfig = { stiffness: 100, damping: 20 };
-  const rotateX = useSpring(0, springConfig);
-  const rotateY = useSpring(0, springConfig);
+  const springConfig = { stiffness: 150, damping: 15 };
+  const springX = useSpring(x, springConfig);
+  const springY = useSpring(y, springConfig);
 
   const handleMouseMove = (e: React.MouseEvent) => {
     if (!ref.current) return;
     const rect = ref.current.getBoundingClientRect();
     const centerX = rect.left + rect.width / 2;
     const centerY = rect.top + rect.height / 2;
-    rotateX.set((e.clientY - centerY) / 25);
-    rotateY.set((centerX - e.clientX) / 25);
+    const moveX = (e.clientX - centerX) * 0.1;
+    const moveY = (e.clientY - centerY) * 0.1;
+    x.set(moveX);
+    y.set(moveY);
   };
 
   const handleMouseLeave = () => {
-    rotateX.set(0);
-    rotateY.set(0);
+    x.set(0);
+    y.set(0);
   };
 
   return (
     <motion.div
       ref={ref}
-      initial={{ opacity: 0, y: 40 }}
-      whileInView={{ opacity: 1, y: 0 }}
-      viewport={{ once: true }}
-      transition={{ duration: 0.6, delay: index * 0.15 }}
+      style={{ x: springX, y: springY }}
       onMouseMove={handleMouseMove}
       onMouseLeave={handleMouseLeave}
-      style={{ rotateX, rotateY, transformStyle: "preserve-3d" }}
-      className="perspective-1000"
+      className={className}
     >
-      <motion.div
-        whileHover={{ y: -8 }}
-        transition={{ type: "spring", stiffness: 400, damping: 20 }}
-      >
-        <Card className="relative p-8 md:p-7 lg:p-8 xl:p-8 h-full border-border bg-card/50 backdrop-blur-sm hover:border-primary/30 hover:shadow-xl transition-all duration-300 group overflow-hidden">
-          {/* Animated gradient background */}
-          <motion.div className="absolute inset-0 bg-gradient-to-br from-primary/5 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
-
-          <motion.div
-            className="w-14 h-14 rounded-2xl bg-primary/10 flex items-center justify-center mb-6 group-hover:bg-primary/20 transition-colors"
-            whileHover={{ scale: 1.1, rotate: 5 }}
-            transition={{ type: "spring", stiffness: 400 }}
-            style={{ transform: "translateZ(30px)" }}
-          >
-            <Icon className={`w-7 h-7 ${feature.color}`} />
-          </motion.div>
-          <motion.h3
-            className="text-xl font-semibold mb-3 group-hover:text-primary transition-colors"
-            style={{ transform: "translateZ(20px)" }}
-          >
-            {t(`${feature.key}.title`)}
-          </motion.h3>
-          <motion.p
-            className="text-muted-foreground leading-relaxed mb-6"
-            style={{ transform: "translateZ(15px)" }}
-          >
-            {t(`${feature.key}.description`)}
-          </motion.p>
-
-          {/* Mini feature list with stagger */}
-          <div className="space-y-2" style={{ transform: "translateZ(10px)" }}>
-            {[1, 2].map((item, i) => (
-              <motion.div
-                key={item}
-                className="flex items-center gap-2 text-sm"
-                initial={{ opacity: 0, x: -10 }}
-                whileInView={{ opacity: 1, x: 0 }}
-                viewport={{ once: true }}
-                transition={{ delay: 0.4 + index * 0.1 + i * 0.1 }}
-              >
-                <motion.div
-                  className="w-1.5 h-1.5 rounded-full bg-primary"
-                  animate={{ scale: [1, 1.3, 1] }}
-                  transition={{ duration: 2, repeat: Infinity, delay: i * 0.3 }}
-                />
-                <span className="text-muted-foreground">
-                  {t(`${feature.key}.feature${item}`)}
-                </span>
-              </motion.div>
-            ))}
-          </div>
-        </Card>
-      </motion.div>
-    </motion.div>
-  );
-}
-
-function TestimonialCard({
-  index,
-  quote,
-  name,
-  role,
-  delay,
-}: {
-  index: number;
-  quote: string;
-  name: string;
-  role: string;
-  delay: number;
-}) {
-  return (
-    <motion.div
-      initial={{ opacity: 0, y: 30 }}
-      whileInView={{ opacity: 1, y: 0 }}
-      viewport={{ once: true }}
-      transition={{ duration: 0.5, delay }}
-    >
-      <FloatingCard delay={index * 0.5}>
-        <motion.div
-          whileHover={{ scale: 1.02 }}
-          transition={{ type: "spring", stiffness: 400 }}
-        >
-          <Card className="relative p-6 border-border bg-card/50 backdrop-blur-sm group hover:border-primary/30 hover:shadow-lg transition-all duration-300 overflow-hidden">
-            {/* Shine effect */}
-            <motion.div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/5 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-700" />
-
-            <motion.div
-              initial={{ scale: 0.5, rotate: -20 }}
-              whileInView={{ scale: 1, rotate: 0 }}
-              viewport={{ once: true }}
-              transition={{
-                delay: delay + 0.2,
-                type: "spring",
-                stiffness: 200,
-              }}
-            >
-              <Quote className="w-8 h-8 text-primary/30 mb-4 group-hover:text-primary/50 transition-colors" />
-            </motion.div>
-            <p className="text-muted-foreground mb-6 leading-relaxed">
-              &ldquo;{quote}&rdquo;
-            </p>
-            <motion.div
-              className="flex items-center gap-3"
-              initial={{ opacity: 0, x: -20 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              viewport={{ once: true }}
-              transition={{ delay: delay + 0.3 }}
-            >
-              <motion.div
-                className="w-10 h-10 rounded-full bg-muted flex items-center justify-center font-semibold group-hover:bg-primary/10 group-hover:text-primary transition-colors"
-                whileHover={{ scale: 1.1 }}
-              >
-                {name.charAt(0)}
-              </motion.div>
-              <div>
-                <p className="font-medium text-sm">{name}</p>
-                <p className="text-xs text-muted-foreground">{role}</p>
-              </div>
-            </motion.div>
-          </Card>
-        </motion.div>
-      </FloatingCard>
+      {children}
     </motion.div>
   );
 }
 
 export function ExploreSection() {
   const t = useTranslations("explore");
+  const tServices = useTranslations("services");
 
   return (
     <section className="py-20 md:py-24 lg:py-26 xl:py-28 relative overflow-hidden">
@@ -268,30 +160,78 @@ export function ExploreSection() {
           </motion.p>
         </motion.div>
 
-        {/* Features Grid */}
-        <div className="grid md:grid-cols-3 gap-6 md:gap-7 lg:gap-8 xl:gap-8 mb-16 md:mb-14 lg:mb-16 xl:mb-16">
-          {exploreFeatures.map((feature, index) => (
-            <FeatureCard
-              key={feature.key}
-              feature={feature}
-              index={index}
-              t={t}
-            />
-          ))}
-        </div>
+        {/* Services Grid */}
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8 lg:gap-10 xl:gap-10">
+          {services.map((service, index) => {
+            const Icon = service.icon;
+            return (
+              <motion.div
+                key={service.key}
+                initial={{ opacity: 0, y: 30, scale: 0.9 }}
+                whileInView={{ opacity: 1, y: 0, scale: 1 }}
+                viewport={{ once: true }}
+                transition={{
+                  duration: 0.5,
+                  delay: index * 0.07,
+                  type: "spring",
+                  stiffness: 200,
+                }}
+              >
+                <MagneticCard>
+                  <motion.div
+                    whileHover={{ scale: 1.05, y: -6 }}
+                    whileTap={{ scale: 0.98 }}
+                    transition={{ type: "spring", stiffness: 400, damping: 20 }}
+                    className="group relative p-8 md:p-6 lg:p-8 xl:p-8 rounded-3xl border border-border bg-card/50 backdrop-blur-sm hover:border-primary/30 hover:shadow-xl hover:shadow-primary/5 transition-all duration-300 cursor-pointer h-full"
+                  >
+                    {/* Icon with animations */}
+                    <motion.div
+                      className={`w-14 h-14 rounded-2xl ${service.color} ${service.hoverColor} flex items-center justify-center mb-4 transition-colors duration-300`}
+                      whileHover={{
+                        rotate: [0, -10, 10, -5, 5, 0],
+                        transition: { duration: 0.5 },
+                      }}
+                    >
+                      <motion.div
+                        initial={{ scale: 1 }}
+                        whileHover={{ scale: 1.1 }}
+                        transition={{ type: "spring", stiffness: 400 }}
+                      >
+                        <Icon className="w-7 h-7" />
+                      </motion.div>
+                    </motion.div>
 
-        {/* Testimonials Row */}
-        <div className="grid md:grid-cols-2 gap-6 md:gap-5 lg:gap-6 xl:gap-6">
-          {[1, 2].map((testimonial, index) => (
-            <TestimonialCard
-              key={testimonial}
-              index={index}
-              quote={t(`testimonial${testimonial}.quote`)}
-              name={t(`testimonial${testimonial}.name`)}
-              role={t(`testimonial${testimonial}.role`)}
-              delay={0.4 + index * 0.15}
-            />
-          ))}
+                    {/* Label */}
+                    <h3 className="font-semibold text-lg group-hover:text-primary transition-colors duration-300">
+                      {tServices(`${service.key}.title`)}
+                    </h3>
+
+                    {/* Description */}
+                    <p className="text-sm text-muted-foreground mt-3 leading-relaxed">
+                      {tServices(`${service.key}.description`)}
+                    </p>
+
+                    {/* Hover gradient */}
+                    <motion.div className="absolute inset-0 rounded-3xl bg-linear-to-br from-primary/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 -z-10" />
+
+                    {/* Shine effect on hover */}
+                    <motion.div
+                      className="absolute inset-0 rounded-3xl overflow-hidden"
+                      initial={false}
+                    >
+                      <motion.div
+                        className="absolute inset-0 bg-linear-to-r from-transparent via-white/10 to-transparent -translate-x-full"
+                        whileHover={{
+                          translateX: "200%",
+                          transition: { duration: 0.6, ease: "easeInOut" },
+                        }}
+                      />
+                    </motion.div>
+                  </motion.div>
+                </MagneticCard>
+              </motion.div>
+            );
+          })}
         </div>
       </div>
     </section>

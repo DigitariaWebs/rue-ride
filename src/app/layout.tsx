@@ -17,17 +17,18 @@ const geistMono = Geist_Mono({
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://rueride.fr"),
-  title: "Rue Ride - Your Paris Ride Awaits",
+  title: "VTC Ride - Your Paris Ride Awaits",
   description:
     "Simple, reliable rides across Paris. Calculate your fare and book your ride in seconds.",
   icons: {
-    icon: "/logo.png",
-    apple: "/logo.png",
+    icon: "/logo-light.png",
+    apple: "/logo-light.png",
   },
   openGraph: {
-    title: "Rue Ride - Your Paris Ride Awaits",
-    description: "Simple, reliable rides across Paris. Calculate your fare and book your ride in seconds.",
-    images: ["/logo.png"],
+    title: "VTC Ride - Your Paris Ride Awaits",
+    description:
+      "Simple, reliable rides across Paris. Calculate your fare and book your ride in seconds.",
+    images: ["/logo-light.png"],
   },
 };
 
@@ -41,11 +42,11 @@ export default async function RootLayout({
 
   return (
     <html lang={locale} className="scroll-smooth dark" suppressHydrationWarning>
-      <body className={`${geistSans.variable} ${geistMono.variable} antialiased`}>
+      <body
+        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
+      >
         <NextIntlClientProvider messages={messages}>
-          <ThemeProvider defaultTheme="dark">
-            {children}
-          </ThemeProvider>
+          <ThemeProvider defaultTheme="dark">{children}</ThemeProvider>
         </NextIntlClientProvider>
       </body>
     </html>

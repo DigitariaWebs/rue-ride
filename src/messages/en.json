@@ -27,7 +27,7 @@
     }
   },
   "metadata": {
-    "title": "Rue Ride - Your Paris Ride Awaits",
+    "title": "VTC Ride - Your Paris Ride Awaits",
     "description": "Simple, reliable rides across Paris. Calculate your fare and book your ride in seconds."
   },
   "header": {
@@ -39,12 +39,12 @@
     "getStarted": "Get Started"
   },
   "hero": {
-    "tagline": "Explore the Rue Ride App",
+    "tagline": "Explore the VTC Ride App",
     "explore": "Explore",
     "headlinePart1": "Simple.",
     "headlinePart2": "Reliable.",
     "headlinePart3": "Your Ride Awaits.",
-    "description": "Rue Ride connects you with reliable rides across Paris, anytime, anywhere. Try our calculator and experience the future of hassle-free travel.",
+    "description": "VTC Ride connects you with reliable rides across Paris, anytime, anywhere. Try our calculator and experience the future of hassle-free travel.",
     "cta": "Learn More",
     "downloadApp": "Try Calculator",
     "reviews": "Based on {count}+ reviews",
@@ -53,7 +53,7 @@
     "captainOnWay": "Your Captain is on the way"
   },
   "stats": {
-    "badge": "Why Rue Ride",
+    "badge": "Why VTC Ride",
     "title": "Quality Rides,",
     "titleHighlight": "Trusted Drivers",
     "description": "We're building a ride service you can count on. Every driver is carefully vetted, every ride is tracked, and your comfort is our priority.",
@@ -89,14 +89,30 @@
     "badge": "Our Services",
     "title": "The services we offer",
     "subtitle": "For those who know what they want to ride.",
-    "rides": "Rides",
-    "ridesPlus": "Rides Plus",
-    "ebike": "E-Bike",
-    "cityToCity": "City to City",
-    "send": "Send Package",
-    "food": "Food Delivery",
-    "groceries": "Groceries",
-    "scheduled": "Scheduled",
+    "rides": {
+      "title": "Private Ride",
+      "description": "Comfortable and secure private transportation for your personal journeys."
+    },
+    "ridesPlus": {
+      "title": "Children's Transport",
+      "description": "Specialized service for safe child transportation with trained drivers."
+    },
+    "ebike": {
+      "title": "Disabled Transport",
+      "description": "Adapted vehicles and experienced drivers for disabled passenger transport."
+    },
+    "cityToCity": {
+      "title": "Meal Delivery",
+      "description": "Fast and reliable delivery of your favorite meals right to your door."
+    },
+    "send": {
+      "title": "Packages",
+      "description": "Secure shipment of parcels and packages with real-time tracking."
+    },
+    "food": {
+      "title": "Pets (Animals)",
+      "description": "Comfortable transportation for your pets with care and attention."
+    },
     "captainOnWay": "Your Captain is on the way"
   },
   "calculator": {
@@ -123,40 +139,12 @@
   "explore": {
     "badge": "Explore Our Services",
     "title": "Your Ride. Your Way.",
-    "titleHighlight": "Explore Rue Ride's Services.",
-    "subtitle": "Rue Ride offers a range of transportation options to fit your needs and budget.",
-    "anywhere": {
-      "title": "Go Anywhere",
-      "description": "Experience the ability to book rides across all of Paris and beyond. Explore historic landmarks or hidden gems with ease.",
-      "feature1": "All Paris neighborhoods covered",
-      "feature2": "Airport and station transfers"
-    },
-    "anytime": {
-      "title": "Ride Anytime",
-      "description": "Day or night, rain or shine. Our drivers are always ready to get you where you need to go, 24 hours a day.",
-      "feature1": "24/7 availability",
-      "feature2": "Schedule rides in advance"
-    },
-    "payment": {
-      "title": "Pay Your Way",
-      "description": "Multiple payment options for your convenience. Card, cash, or digital wallet - whatever works best for you.",
-      "feature1": "Secure card payments",
-      "feature2": "Cash and digital wallets"
-    },
-    "testimonial1": {
-      "quote": "I've tried other ride-sharing apps, but Rue Ride is by far the best. The prices are competitive, the service is reliable, and I love the option to choose my preferred car type.",
-      "name": "Marie D.",
-      "role": "Regular Rider"
-    },
-    "testimonial2": {
-      "quote": "As a woman, I feel safe using Rue Ride. The app provides real-time tracking and allows me to share my ride details with loved ones. The drivers are always respectful.",
-      "name": "Sophie L.",
-      "role": "Daily Commuter"
-    }
+    "titleHighlight": "Explore VTC Ride's Services.",
+    "subtitle": "VTC Ride offers a range of transportation options to fit your needs."
   },
   "features": {
     "badge": "Why Choose Us",
-    "title": "Why Choose Rue Ride?",
+    "title": "Why Choose VTC Ride?",
     "subtitle": "We're building the ride service Paris deserves",
     "safety": {
       "title": "Safe & Secure",
@@ -175,43 +163,24 @@
       "description": "Our support team is always available to help you with any issues."
     },
     "payment": {
-      "title": "Easy Payment",
-      "description": "Pay with card, cash, or digital wallet. Whatever works for you."
+      "title": "Professional VTC Drivers",
+      "description": "Our drivers are professional VTC licensed and trained for excellent service."
     },
     "eco": {
       "title": "Eco-Friendly",
       "description": "Choose our electric vehicle options for a greener ride."
     }
   },
-  "testimonials": {
-    "badge": "Early Feedback",
-    "title": "What Our Beta Users Say",
-    "subtitle": "We've been testing with a select group of users. Here's what they think so far.",
-    "review1": {
-      "quote": "Rue Ride has been a game-changer for me! I used to dread rush hour traffic, but now I just relax and let Rue Ride handle the driving. The app is super easy to use.",
-      "name": "Lucas B.",
-      "location": "Paris, 16ème"
-    },
-    "review2": {
-      "quote": "Rue Ride has made a huge difference in my life. It's convenient, affordable, and has created job opportunities for many people. Great service!",
-      "name": "Amélie P.",
-      "location": "Paris, Le Marais"
-    },
-    "review3": {
-      "quote": "The drivers are always professional and the cars are clean. I use Rue Ride for all my airport transfers now. Highly recommended for anyone in Paris!",
-      "name": "Thomas M.",
-      "location": "Paris, 8ème"
-    }
-  },
+
   "faq": {
     "badge": "FAQ",
-    "title": "Rue Ride FAQs",
+    "title": "VTC Ride FAQs",
     "subtitle": "Find your topic questioned answered here. If you can't find what you're looking for, contact our support team.",
     "stillQuestions": "Still have questions?",
     "contactUs": "Contact our support team →",
     "booking": {
       "question": "How do I book a ride?",
-      "answer": "Download the Rue Ride app from the App Store or Google Play Store. Sign up with your phone number, enter your pickup and destination, choose your ride type, and confirm. A driver will be assigned to you within minutes."
+      "answer": "Download the VTC Ride app from the App Store or Google Play Store. Sign up with your phone number, enter your pickup and destination, choose your ride type, and confirm. A driver will be assigned to you within minutes."
     },
     "payment": {
       "question": "How can I change my payment method?",
@@ -222,11 +191,11 @@
       "answer": "If your driver doesn't arrive within 10 minutes, you can cancel for free and rebook. For missing items, use the 'Lost & Found' feature in the app or contact our 24/7 support team."
     },
     "driver": {
-      "question": "How do I become a Rue Ride driver?",
+      "question": "How do I become a VTC Ride driver?",
       "answer": "Visit our website or download the Driver app. You'll need a valid driver's license, proof of insurance, and to pass our background check. Most applications are processed within 48 hours."
     },
     "safety": {
-      "question": "How does Rue Ride ensure passenger safety?",
+      "question": "How does VTC Ride ensure passenger safety?",
       "answer": "All drivers undergo thorough background checks. The app provides real-time ride tracking, an emergency button, and the ability to share your trip with friends and family. All rides are GPS monitored."
     },
     "support": {
@@ -276,7 +245,7 @@
     "business": "Business",
     "delivery": "Delivery",
     "social": "Our Socials",
-    "copyright": "© {year} Rue Ride. All rights reserved.",
+    "copyright": "© {year} VTC Ride. All rights reserved.",
     "madeWith": "Made with ❤️ in Paris"
   }
 }

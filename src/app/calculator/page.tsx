@@ -33,6 +33,7 @@ import { MapboxRouteMap } from "@/components/calculator/MapboxRouteMap";
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
 import { cn } from "@/lib/utils";
+import { useTheme } from "@/components/ThemeProvider";
 
 interface Location {
   address: string;
@@ -76,6 +77,7 @@ function calculateFare(
 
 function CalculatorContent() {
   const t = useTranslations("calculatorPage");
+  const { theme } = useTheme();
   const containerRef = useRef<HTMLDivElement>(null);
 
   const [pickup, setPickup] = useState<Location>({
@@ -238,11 +240,13 @@ function CalculatorContent() {
                   transition={{ type: "spring", stiffness: 400 }}
                 >
                   <Image
-                    src="/logo.png"
-                    alt="Rue Ride"
+                    src={
+                      theme === "dark" ? "/logo-dark.png" : "/logo-light.png"
+                    }
+                    alt="VTC Ride"
                     width={100}
                     height={35}
-                    className="h-6 w-auto dark:brightness-0 dark:invert"
+                    className="h-6 w-auto"
                     priority
                   />
                 </motion.div>

@@ -6,11 +6,11 @@ import {
   ArrowRight,
   Star,
   Car,
-  Zap,
-  Bike,
-  MapPin,
+  Users,
+  Accessibility,
   UtensilsCrossed,
   Package,
+  PawPrint,
 } from "lucide-react";
 import Link from "next/link";
 import Image from "next/image";
@@ -18,19 +18,21 @@ import { useRef } from "react";
 import { Button } from "@/components/ui/button";
 import { PhoneMockup } from "@/components/ui/phone-mockup";
 import { useMousePosition } from "@/hooks/useMousePosition";
+import { useTheme } from "@/components/ThemeProvider";
 
 const quickServices = [
   { key: "rides", icon: Car },
-  { key: "ridesPlus", icon: Zap },
-  { key: "ebike", icon: Bike },
-  { key: "cityToCity", icon: MapPin },
-  { key: "food", icon: UtensilsCrossed },
+  { key: "ridesPlus", icon: Users },
+  { key: "ebike", icon: Accessibility },
+  { key: "cityToCity", icon: UtensilsCrossed },
   { key: "send", icon: Package },
+  { key: "food", icon: PawPrint },
 ];
 
 export function HeroSection() {
   const t = useTranslations("hero");
   const tServices = useTranslations("services");
+  const { theme } = useTheme();
   const sectionRef = useRef<HTMLElement>(null);
   const mouse = useMousePosition(sectionRef);
 
@@ -64,11 +66,11 @@ export function HeroSection() {
       <div className="absolute inset-0 -z-10">
         <motion.div
           style={{ y: bgY1, scale: bgScale, x: mouseX }}
-          className="absolute top-0 right-0 w-[600px] h-[600px] bg-primary/5 rounded-full blur-3xl"
+          className="absolute top-0 right-0 w-150 h-150 bg-primary/5 rounded-full blur-3xl"
         />
         <motion.div
           style={{ y: bgY2, x: mouseY }}
-          className="absolute bottom-0 left-0 w-[400px] h-[400px] bg-accent/5 rounded-full blur-3xl"
+          className="absolute bottom-0 left-0 w-100 h-100 bg-accent/5 rounded-full blur-3xl"
         />
 
         {/* Floating particles */}
@@ -112,11 +114,11 @@ export function HeroSection() {
               className="mb-8"
             >
               <Image
-                src="/logo.png"
-                alt="Rue Ride"
+                src={theme === "dark" ? "/logo-dark.png" : "/logo-light.png"}
+                alt="VTC Ride"
                 width={280}
                 height={100}
-                className="h-20 sm:h-24 lg:h-28 w-auto dark:brightness-0 dark:invert"
+                className="h-20 sm:h-24 lg:h-28 w-auto"
                 priority
               />
             </motion.div>
@@ -278,7 +280,7 @@ export function HeroSection() {
                         <Icon className="w-6 h-6 text-muted-foreground group-hover:text-primary transition-colors" />
                       </motion.div>
                       <span className="text-xs font-medium text-center">
-                        {tServices(service.key)}
+                        {tServices(`${service.key}.title`)}
                       </span>
                     </motion.div>
                   );

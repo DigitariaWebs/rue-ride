@@ -40,11 +40,11 @@ export function Header() {
               transition={{ type: "spring", stiffness: 400, damping: 25 }}
             >
               <Image
-                src="/logo.png"
-                alt="Rue Ride"
+                src={theme === "dark" ? "/logo-dark.png" : "/logo-light.png"}
+                alt="VTC Ride"
                 width={160}
                 height={56}
-                className="h-11 md:h-12 lg:h-14 xl:h-14 w-auto dark:brightness-0 dark:invert"
+                className="h-11 md:h-12 lg:h-14 xl:h-14 w-auto"
                 priority
               />
             </motion.div>

@@ -5,14 +5,16 @@ import { motion, useMotionValue, useSpring } from "framer-motion";
 import { MapPin, Navigation, Car } from "lucide-react";
 import { useRef } from "react";
 import Image from "next/image";
+import { useTheme } from "@/components/ThemeProvider";
 
 export function PhoneMockup() {
   const t = useTranslations("phone");
+  const { theme } = useTheme();
   const ref = useRef<HTMLDivElement>(null);
-  
+
   const x = useMotionValue(0);
   const y = useMotionValue(0);
-  
+
   const springConfig = { stiffness: 100, damping: 20 };
   const rotateX = useSpring(0, springConfig);
   const rotateY = useSpring(0, springConfig);
@@ -56,7 +58,7 @@ export function PhoneMockup() {
             whileHover={{ opacity: 1 }}
             transition={{ duration: 0.3 }}
           />
-          
+
           {/* Phone screen */}
           <div className="bg-background rounded-[2.5rem] overflow-hidden relative">
             {/* Status Bar */}
@@ -88,11 +90,11 @@ export function PhoneMockup() {
             >
               <div className="flex items-center justify-between">
                 <Image
-                  src="/logo.png"
-                  alt="Rue Ride"
+                  src={theme === "dark" ? "/logo-dark.png" : "/logo-light.png"}
+                  alt="VTC Ride"
                   width={100}
                   height={36}
-                  className="h-8 w-auto dark:brightness-0 dark:invert"
+                  className="h-8 w-auto"
                 />
               </div>
             </motion.div>
@@ -153,7 +155,9 @@ export function PhoneMockup() {
                 transition={{ delay: 0.9 }}
               >
                 <div className="bg-card rounded-xl px-3 py-2 shadow-sm border border-border text-xs">
-                  <span className="text-muted-foreground">{t("locationLabel")}</span>
+                  <span className="text-muted-foreground">
+                    {t("locationLabel")}
+                  </span>
                 </div>
               </motion.div>
 
@@ -181,7 +185,11 @@ export function PhoneMockup() {
               >
                 <motion.div
                   animate={{ y: [0, -3, 0] }}
-                  transition={{ duration: 1.5, repeat: Infinity, ease: "easeInOut" }}
+                  transition={{
+                    duration: 1.5,
+                    repeat: Infinity,
+                    ease: "easeInOut",
+                  }}
                 >
                   <MapPin className="w-5 h-5 text-destructive fill-destructive" />
                 </motion.div>
@@ -195,7 +203,9 @@ export function PhoneMockup() {
                 transition={{ delay: 1.2 }}
               >
                 <div className="flex items-center gap-1 text-xs">
-                  <span className="text-muted-foreground">{t("pickupPoint")}</span>
+                  <span className="text-muted-foreground">
+                    {t("pickupPoint")}
+                  </span>
                   <span className="font-medium">• {t("minutes")}</span>
                 </div>
               </motion.div>
@@ -218,7 +228,9 @@ export function PhoneMockup() {
                   animate={{ scale: [1, 1.3, 1] }}
                   transition={{ duration: 2, repeat: Infinity }}
                 />
-                <span className="text-sm text-muted-foreground">{t("addressPlaceholder")}</span>
+                <span className="text-sm text-muted-foreground">
+                  {t("addressPlaceholder")}
+                </span>
               </motion.div>
             </motion.div>
 
@@ -231,11 +243,16 @@ export function PhoneMockup() {
             >
               <motion.div
                 className="rounded-2xl border border-border bg-card p-4"
-                whileHover={{ borderColor: "hsl(var(--primary) / 0.3)", scale: 1.01 }}
+                whileHover={{
+                  borderColor: "hsl(var(--primary) / 0.3)",
+                  scale: 1.01,
+                }}
                 transition={{ type: "spring", stiffness: 400 }}
               >
                 <div className="flex items-center justify-between mb-3">
-                  <span className="text-sm font-medium">{t("rideDetails")}</span>
+                  <span className="text-sm font-medium">
+                    {t("rideDetails")}
+                  </span>
                   <motion.span
                     className="text-xs text-primary cursor-pointer"
                     whileHover={{ scale: 1.05 }}
@@ -254,7 +271,9 @@ export function PhoneMockup() {
                     </motion.div>
                     <div>
                       <p className="font-medium text-sm">{t("comfort")}</p>
-                      <p className="text-xs text-muted-foreground">{t("comfortDesc")}</p>
+                      <p className="text-xs text-muted-foreground">
+                        {t("comfortDesc")}
+                      </p>
                     </div>
                   </div>
                   <div className="text-right">
@@ -313,7 +332,12 @@ export function PhoneMockup() {
           <motion.div
             className="bg-card rounded-2xl p-3 shadow-xl border border-border"
             animate={{ y: [0, 8, 0] }}
-            transition={{ duration: 3.5, repeat: Infinity, ease: "easeInOut", delay: 0.5 }}
+            transition={{
+              duration: 3.5,
+              repeat: Infinity,
+              ease: "easeInOut",
+              delay: 0.5,
+            }}
             whileHover={{ scale: 1.05 }}
           >
             <div className="flex items-center gap-2">
