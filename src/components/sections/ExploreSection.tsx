@@ -2,14 +2,7 @@
 
 import { useTranslations } from "next-intl";
 import { motion, useMotionValue, useSpring, useTransform } from "framer-motion";
-import {
-  Car,
-  Users,
-  Accessibility,
-  Package,
-  UtensilsCrossed,
-  PawPrint,
-} from "lucide-react";
+import { Car, Users, Accessibility, Package, UtensilsCrossed, PawPrint } from "lucide-react";
 import { useRef } from "react";
 
 const services = [
@@ -51,13 +44,7 @@ const services = [
   },
 ];
 
-function MagneticCard({
-  children,
-  className,
-}: {
-  children: React.ReactNode;
-  className?: string;
-}) {
+function MagneticCard({ children, className }: { children: React.ReactNode; className?: string }) {
   const ref = useRef<HTMLDivElement>(null);
   const x = useMotionValue(0);
   const y = useMotionValue(0);

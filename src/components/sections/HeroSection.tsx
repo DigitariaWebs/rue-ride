@@ -60,7 +60,7 @@ export function HeroSection() {
     <section
       ref={sectionRef}
       id="home"
-      className="relative pt-24 md:pt-28 lg:pt-32 xl:pt-32 pb-16 md:pb-18 lg:pb-16 xl:pb-16 overflow-hidden"
+      className="relative pt-32 md:pt-36 lg:pt-40 xl:pt-40 pb-16 md:pb-18 lg:pb-16 xl:pb-16 overflow-hidden"
     >
       {/* Animated Background decorations */}
       <div className="absolute inset-0 -z-10">
@@ -121,6 +121,21 @@ export function HeroSection() {
                 className="h-20 sm:h-24 lg:h-28 w-auto"
                 priority
               />
+            </motion.div>
+
+            {/* Mobile App Coming Soon Badge */}
+            <motion.div
+              initial={{ opacity: 0, y: -10 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ delay: 0.1, duration: 0.5 }}
+              className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-primary/10 border border-primary/20 text-xs font-medium text-primary mb-4"
+            >
+              <motion.span
+                animate={{ scale: [1, 1.2, 1] }}
+                transition={{ duration: 2, repeat: Infinity }}
+                className="w-2 h-2 rounded-full bg-primary"
+              />
+              {t("mobileAppSoon")}
             </motion.div>
 
             {/* Top Badge with subtle animation */}

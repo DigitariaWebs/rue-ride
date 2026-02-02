@@ -34,7 +34,7 @@ export function useCountUp({
 
     const animate = () => {
       const now = Date.now();
-      
+
       if (now < startTime) {
         requestAnimationFrame(animate);
         return;
@@ -49,7 +49,7 @@ export function useCountUp({
       // Easing function - easeOutExpo
       const easeProgress = 1 - Math.pow(2, -10 * progress);
       const currentValue = start + (end - start) * easeProgress;
-      
+
       setCount(Number(currentValue.toFixed(decimals)));
       requestAnimationFrame(animate);
     };
@@ -66,7 +66,7 @@ export function useCountUp({
           }
         });
       },
-      { threshold: 0.3 }
+      { threshold: 0.3 },
     );
 
     if (elementRef.current) {

@@ -7,7 +7,6 @@ import { Button } from "@/components/ui/button";
 import { useRef, useEffect, useState } from "react";
 
 const stats = [
-  { key: "rides", value: 3, suffix: " min" },
   { key: "drivers", value: 100, suffix: "%" },
   { key: "co2", value: 100, suffix: "%" },
 ];
@@ -65,10 +64,7 @@ export function StatsSection() {
   const isInView = useInView(sectionRef, { once: true, margin: "-100px" });
 
   return (
-    <section
-      ref={sectionRef}
-      className="py-20 md:py-24 lg:py-26 xl:py-28 relative overflow-hidden"
-    >
+    <section ref={sectionRef} className="py-20 md:py-24 lg:py-26 xl:py-28 relative overflow-hidden">
       {/* Background decoration with subtle animation */}
       <motion.div
         className="absolute inset-0 -z-10 bg-gradient-to-b from-muted/50 via-muted/30 to-transparent"
@@ -136,10 +132,7 @@ export function StatsSection() {
               viewport={{ once: true }}
               transition={{ duration: 0.6, delay: 0.3 }}
             >
-              <Button
-                variant="outline"
-                className="rounded-full group overflow-hidden relative"
-              >
+              <Button variant="outline" className="rounded-full group overflow-hidden relative">
                 <motion.span
                   className="absolute inset-0 bg-primary/5"
                   initial={{ x: "-100%" }}
@@ -161,7 +154,7 @@ export function StatsSection() {
             viewport={{ once: true }}
             transition={{ duration: 0.7, delay: 0.2 }}
           >
-            <div className="grid grid-cols-3 gap-4">
+            <div className="grid grid-cols-2 gap-4">
               {stats.map((stat, index) => (
                 <motion.div
                   key={stat.key}

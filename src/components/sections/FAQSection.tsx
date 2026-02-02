@@ -65,11 +65,7 @@ function FAQItem({
               animate={{ rotate: isOpen ? -180 : 0 }}
               transition={{ duration: 0.3, ease: "easeInOut" }}
             >
-              {isOpen ? (
-                <Minus className="w-4 h-4" />
-              ) : (
-                <Plus className="w-4 h-4" />
-              )}
+              {isOpen ? <Minus className="w-4 h-4" /> : <Plus className="w-4 h-4" />}
             </motion.div>
           </motion.div>
         </motion.button>

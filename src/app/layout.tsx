@@ -42,9 +42,7 @@ export default async function RootLayout({
 
   return (
     <html lang={locale} className="scroll-smooth dark" suppressHydrationWarning>
-      <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
-      >
+      <body className={`${geistSans.variable} ${geistMono.variable} antialiased`}>
         <NextIntlClientProvider messages={messages}>
           <ThemeProvider defaultTheme="dark">{children}</ThemeProvider>
         </NextIntlClientProvider>

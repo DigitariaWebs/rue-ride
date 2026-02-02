@@ -97,9 +97,7 @@ export function MapboxRouteMap({
   const { accessToken } = useMapbox();
   const { theme } = useTheme();
   const mapRef = useRef<MapRef>(null);
-  const [routeGeoJSON, setRouteGeoJSON] = useState<GeoJSON.Feature | null>(
-    null,
-  );
+  const [routeGeoJSON, setRouteGeoJSON] = useState<GeoJSON.Feature | null>(null);
   const [isLoading, setIsLoading] = useState(true);
   const [viewState, setViewState] = useState({
     ...PARIS_CENTER,
@@ -271,11 +269,7 @@ export function MapboxRouteMap({
 
         {/* Pickup Marker */}
         {pickupLocation && (
-          <Marker
-            longitude={pickupLocation.lng}
-            latitude={pickupLocation.lat}
-            anchor="center"
-          >
+          <Marker longitude={pickupLocation.lng} latitude={pickupLocation.lat} anchor="center">
             <motion.div
               initial={{ scale: 0 }}
               animate={{ scale: 1 }}
@@ -298,11 +292,7 @@ export function MapboxRouteMap({
 
         {/* Dropoff Marker */}
         {dropoffLocation && (
-          <Marker
-            longitude={dropoffLocation.lng}
-            latitude={dropoffLocation.lat}
-            anchor="bottom"
-          >
+          <Marker longitude={dropoffLocation.lng} latitude={dropoffLocation.lat} anchor="bottom">
             <motion.div
               initial={{ scale: 0, y: -20 }}
               animate={{ scale: 1, y: 0 }}
@@ -346,9 +336,7 @@ export function MapboxRouteMap({
             transition={{ duration: 3, repeat: Infinity }}
           >
             <MapPin className="w-12 h-12 mx-auto mb-3 text-primary/50" />
-            <p className="text-muted-foreground text-sm">
-              Enter locations to see the route
-            </p>
+            <p className="text-muted-foreground text-sm">Enter locations to see the route</p>
           </motion.div>
         </motion.div>
       )}

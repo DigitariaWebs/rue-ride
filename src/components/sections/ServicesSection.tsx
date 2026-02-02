@@ -2,14 +2,7 @@
 
 import { useTranslations } from "next-intl";
 import { motion, useMotionValue, useSpring, useTransform } from "framer-motion";
-import {
-  Car,
-  Users,
-  Accessibility,
-  Package,
-  UtensilsCrossed,
-  PawPrint,
-} from "lucide-react";
+import { Car, Users, Accessibility, Package, UtensilsCrossed, PawPrint } from "lucide-react";
 import { useRef } from "react";
 
 const services = [
@@ -51,13 +44,7 @@ const services = [
   },
 ];
 
-function MagneticCard({
-  children,
-  className,
-}: {
-  children: React.ReactNode;
-  className?: string;
-}) {
+function MagneticCard({ children, className }: { children: React.ReactNode; className?: string }) {
   const ref = useRef<HTMLDivElement>(null);
   const x = useMotionValue(0);
   const y = useMotionValue(0);
@@ -99,10 +86,7 @@ export function ServicesSection() {
   const t = useTranslations("services");
 
   return (
-    <section
-      id="services"
-      className="py-24 md:py-28 lg:py-30 xl:py-32 relative overflow-hidden"
-    >
+    <section id="services" className="py-24 md:py-28 lg:py-30 xl:py-32 relative overflow-hidden">
       {/* Background decoration with subtle animation */}
       <div className="absolute inset-0 -z-10">
         <motion.div
@@ -249,9 +233,7 @@ export function ServicesSection() {
                 }}
                 transition={{ duration: 1.5, repeat: Infinity }}
               />
-              <span className="text-sm text-muted-foreground">
-                {t("captainOnWay")}
-              </span>
+              <span className="text-sm text-muted-foreground">{t("captainOnWay")}</span>
             </div>
             <motion.span
               className="text-sm"

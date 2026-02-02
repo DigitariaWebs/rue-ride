@@ -2,12 +2,7 @@
 
 import { useState, useCallback, useRef, useEffect } from "react";
 import { useTranslations } from "next-intl";
-import {
-  motion,
-  AnimatePresence,
-  useScroll,
-  useTransform,
-} from "framer-motion";
+import { motion, AnimatePresence } from "framer-motion";
 import {
   ArrowUpDown,
   Euro,
@@ -16,7 +11,6 @@ import {
   ArrowRight,
   ArrowLeft,
   Car,
-  Zap,
   Users,
   Sparkles,
   MapPin,
@@ -25,10 +19,7 @@ import {
 import Link from "next/link";
 import Image from "next/image";
 import { MapboxProvider } from "@/components/calculator/MapboxProvider";
-import {
-  GeocoderInput,
-  type PlaceResult,
-} from "@/components/calculator/GeocoderInput";
+import { GeocoderInput, type PlaceResult } from "@/components/calculator/GeocoderInput";
 import { MapboxRouteMap } from "@/components/calculator/MapboxRouteMap";
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
@@ -65,13 +56,8 @@ const PER_KM_RATE = 1.05;
 const PER_MIN_RATE = 0.35;
 const MINIMUM_FARE = 7.0;
 
-function calculateFare(
-  distanceKm: number,
-  durationMin: number,
-  multiplier: number = 1,
-): number {
-  const fare =
-    BASE_FARE + distanceKm * PER_KM_RATE + durationMin * PER_MIN_RATE;
+function calculateFare(distanceKm: number, durationMin: number, multiplier: number = 1): number {
+  const fare = BASE_FARE + distanceKm * PER_KM_RATE + durationMin * PER_MIN_RATE;
   return Math.max(fare * multiplier, MINIMUM_FARE);
 }
 
@@ -112,31 +98,22 @@ function CalculatorContent() {
       color: "bg-emerald-500/10 text-emerald-500",
     },
     {
-      id: "plus",
-      name: t("rides.plus"),
+      id: "berline",
+      name: t("rides.berline"),
       icon: Sparkles,
       multiplier: 1.5,
-      description: t("rides.plusDesc"),
+      description: t("rides.berlineDesc"),
       eta: "5-8 min",
       color: "bg-amber-500/10 text-amber-500",
     },
     {
-      id: "xl",
-      name: t("rides.xl"),
+      id: "vanne",
+      name: t("rides.vanne"),
       icon: Users,
       multiplier: 1.8,
-      description: t("rides.xlDesc"),
+      description: t("rides.vanneDesc"),
       eta: "6-10 min",
       color: "bg-purple-500/10 text-purple-500",
-    },
-    {
-      id: "electric",
-      name: t("rides.electric"),
-      icon: Zap,
-      multiplier: 1.2,
-      description: t("rides.electricDesc"),
-      eta: "4-7 min",
-      color: "bg-blue-500/10 text-blue-500",
     },
   ];
 
@@ -170,11 +147,7 @@ function CalculatorContent() {
 
   const selectedOption = rideOptions.find((opt) => opt.id === selectedRide);
   const estimatedFare = routeInfo
-    ? calculateFare(
-        routeInfo.distanceValue,
-        routeInfo.durationValue,
-        selectedOption?.multiplier,
-      )
+    ? calculateFare(routeInfo.distanceValue, routeInfo.durationValue, selectedOption?.multiplier)
     : null;
 
   return (
@@ -240,9 +213,7 @@ function CalculatorContent() {
                   transition={{ type: "spring", stiffness: 400 }}
                 >
                   <Image
-                    src={
-                      theme === "dark" ? "/logo-dark.png" : "/logo-light.png"
-                    }
+                    src={theme === "dark" ? "/logo-dark.png" : "/logo-light.png"}
                     alt="VTC Ride"
                     width={100}
                     height={35}
@@ -254,9 +225,7 @@ function CalculatorContent() {
             </div>
             <div className="flex items-center gap-2 text-sm text-muted-foreground">
               <MapPin className="w-4 h-4 text-primary" />
-              <span className="font-medium text-xs sm:text-sm">
-                {t("title")}
-              </span>
+              <span className="font-medium text-xs sm:text-sm">{t("title")}</span>
               <button
                 onClick={() => setShowInputs(!showInputs)}
                 className="md:hidden p-1 rounded hover:bg-muted transition-colors"
@@ -383,9 +352,7 @@ function CalculatorContent() {
                         <Route className="w-4 h-4 md:w-5 md:h-5 text-primary" />
                       </motion.div>
                       <div>
-                        <p className="text-xs sm:text-sm text-muted-foreground">
-                          {t("distance")}
-                        </p>
+                        <p className="text-xs sm:text-sm text-muted-foreground">{t("distance")}</p>
                         <motion.p
                           className="font-bold text-sm sm:text-base md:text-lg lg:text-lg xl:text-lg"
                           initial={{ opacity: 0 }}
@@ -410,9 +377,7 @@ function CalculatorContent() {
                         <Clock className="w-4 h-4 md:w-5 md:h-5 text-primary" />
                       </motion.div>
                       <div>
-                        <p className="text-sm text-muted-foreground">
-                          {t("duration")}
-                        </p>
+                        <p className="text-sm text-muted-foreground">{t("duration")}</p>
                         <motion.p
                           className="font-bold text-sm sm:text-base md:text-lg lg:text-lg xl:text-lg"
                           initial={{ opacity: 0 }}
@@ -494,19 +459,12 @@ function CalculatorContent() {
                           </motion.div>
                           <div className="flex-1 text-left relative z-10">
                             <div className="flex items-center justify-between">
-                              <p
-                                className={cn(
-                                  "font-semibold",
-                                  isSelected && "text-primary",
-                                )}
-                              >
+                              <p className={cn("font-semibold", isSelected && "text-primary")}>
                                 {option.name}
                               </p>
                               <motion.p
                                 className="font-bold text-base sm:text-lg md:text-lg lg:text-xl xl:text-xl"
-                                animate={
-                                  isSelected ? { scale: [1, 1.05, 1] } : {}
-                                }
+                                animate={isSelected ? { scale: [1, 1.05, 1] } : {}}
                                 transition={{ duration: 0.3 }}
                               >
                                 €{fare.toFixed(2)}
@@ -676,9 +634,7 @@ function CalculatorContent() {
                               >
                                 {option.name}
                               </p>
-                              <p className="text-xs sm:text-sm font-bold">
-                                €{fare.toFixed(2)}
-                              </p>
+                              <p className="text-xs sm:text-sm font-bold">€{fare.toFixed(2)}</p>
                             </div>
                             <div className="flex items-center justify-between">
                               <p className="text-xs sm:text-sm text-muted-foreground">
@@ -689,9 +645,7 @@ function CalculatorContent() {
                               </p>
                             </div>
                           </div>
-                          {isSelected && (
-                            <div className="w-2 h-2 rounded-full bg-primary" />
-                          )}
+                          {isSelected && <div className="w-2 h-2 rounded-full bg-primary" />}
                         </motion.button>
                       );
                     })}

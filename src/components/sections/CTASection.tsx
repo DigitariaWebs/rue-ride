@@ -41,9 +41,7 @@ export function CTASection() {
                   {t("title")}
                 </h2>
 
-                <p className="text-white/80 text-lg mb-8 max-w-md">
-                  {t("description")}
-                </p>
+                <p className="text-white/80 text-lg mb-8 max-w-md">{t("description")}</p>
 
                 <div className="flex flex-wrap gap-4">
                   <Button

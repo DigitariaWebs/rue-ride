@@ -9,14 +9,7 @@ import {
   useMotionTemplate,
   useMotionValue,
 } from "framer-motion";
-import {
-  Navigation,
-  ArrowRight,
-  Calculator,
-  Route,
-  Clock,
-  Euro,
-} from "lucide-react";
+import { Navigation, ArrowRight, Calculator, Route, Clock, Euro } from "lucide-react";
 import Link from "next/link";
 import { useRef } from "react";
 import { Button } from "@/components/ui/button";
@@ -32,11 +25,7 @@ export function CalculatorPreview() {
   });
 
   const y = useTransform(scrollYProgress, [0, 1], [100, -50]);
-  const opacity = useTransform(
-    scrollYProgress,
-    [0, 0.3, 0.7, 1],
-    [0, 1, 1, 0.8],
-  );
+  const opacity = useTransform(scrollYProgress, [0, 0.3, 0.7, 1], [0, 1, 1, 0.8]);
   const scale = useTransform(scrollYProgress, [0, 0.3], [0.9, 1]);
 
   // Mouse spotlight effect
@@ -112,10 +101,7 @@ export function CalculatorPreview() {
         </motion.div>
 
         {/* Calculator Card with scroll animation */}
-        <motion.div
-          style={{ y, opacity, scale }}
-          className="max-w-4xl mx-auto perspective-1000"
-        >
+        <motion.div style={{ y, opacity, scale }} className="max-w-4xl mx-auto perspective-1000">
           <motion.div
             ref={cardRef}
             onMouseMove={handleMouseMove}
@@ -231,9 +217,7 @@ export function CalculatorPreview() {
                   >
                     <div className="flex items-center gap-2 mb-1">
                       <Route className="w-4 h-4 text-primary" />
-                      <span className="text-xs text-muted-foreground">
-                        {t("distance")}
-                      </span>
+                      <span className="text-xs text-muted-foreground">{t("distance")}</span>
                     </div>
                     <motion.p
                       className="font-semibold text-lg"
@@ -255,9 +239,7 @@ export function CalculatorPreview() {
                   >
                     <div className="flex items-center gap-2 mb-1">
                       <Clock className="w-4 h-4 text-primary" />
-                      <span className="text-xs text-muted-foreground">
-                        {t("duration")}
-                      </span>
+                      <span className="text-xs text-muted-foreground">{t("duration")}</span>
                     </div>
                     <motion.p
                       className="font-semibold text-lg"
@@ -313,9 +295,7 @@ export function CalculatorPreview() {
                 >
                   {/* Fare Display */}
                   <div className="text-center mb-8">
-                    <p className="text-sm text-muted-foreground mb-2">
-                      {t("estimatedFare")}
-                    </p>
+                    <p className="text-sm text-muted-foreground mb-2">{t("estimatedFare")}</p>
                     <motion.div
                       className="flex items-center justify-center gap-2"
                       initial={{ scale: 0.5, opacity: 0 }}
@@ -360,9 +340,7 @@ export function CalculatorPreview() {
                         viewport={{ once: true }}
                         transition={{ delay: 0.7 + index * 0.1 }}
                       >
-                        <span className="text-muted-foreground">
-                          {item.label}
-                        </span>
+                        <span className="text-muted-foreground">{item.label}</span>
                         <span className="font-medium">{item.value}</span>
                       </motion.div>
                     ))}

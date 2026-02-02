@@ -18,12 +18,10 @@
     "rides": {
       "standard": "Standard",
       "standardDesc": "Affordable everyday rides",
-      "plus": "Plus",
-      "plusDesc": "Premium vehicles, extra comfort",
-      "xl": "XL",
-      "xlDesc": "Up to 6 passengers",
-      "electric": "Electric",
-      "electricDesc": "Eco-friendly zero emission"
+      "berline": "Berline",
+      "berlineDesc": "Premium vehicles, extra comfort",
+      "vanne": "Vanne",
+      "vanneDesc": "Up to 6 passengers"
     }
   },
   "metadata": {
@@ -38,9 +36,13 @@
     "contact": "Contact",
     "getStarted": "Get Started"
   },
+  "banner": {
+    "message": "Mobile App Coming Soon – Stay tuned for our launch!"
+  },
   "hero": {
     "tagline": "Explore the VTC Ride App",
     "explore": "Explore",
+    "mobileAppSoon": "📱 Mobile App Coming Soon",
     "headlinePart1": "Simple.",
     "headlinePart2": "Reliable.",
     "headlinePart3": "Your Ride Awaits.",
@@ -58,10 +60,6 @@
     "titleHighlight": "Trusted Drivers",
     "description": "We're building a ride service you can count on. Every driver is carefully vetted, every ride is tracked, and your comfort is our priority.",
     "cta": "Learn More",
-    "rides": {
-      "label": "Avg. Pickup Time",
-      "sublabel": "Fast & reliable"
-    },
     "drivers": {
       "label": "Vetted Drivers",
       "sublabel": "Background checked"
@@ -208,6 +206,7 @@
     "title": "Ready for a",
     "titleHighlight": "Better Ride Experience?",
     "description": "Download the app and discover what reliable, comfortable transportation in Paris should feel like. Your first ride is just a tap away.",
+    "comingSoon": "Coming Soon",
     "downloadOn": "Download on the",
     "appStore": "App Store",
     "getItOn": "Get it on",

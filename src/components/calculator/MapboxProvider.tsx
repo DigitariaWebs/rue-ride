@@ -20,9 +20,5 @@ interface MapboxProviderProps {
 }
 
 export function MapboxProvider({ children, accessToken }: MapboxProviderProps) {
-  return (
-    <MapboxContext.Provider value={{ accessToken }}>
-      {children}
-    </MapboxContext.Provider>
-  );
+  return <MapboxContext.Provider value={{ accessToken }}>{children}</MapboxContext.Provider>;
 }

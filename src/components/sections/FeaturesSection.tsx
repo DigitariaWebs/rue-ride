@@ -1,20 +1,8 @@
 "use client";
 
 import { useTranslations } from "next-intl";
-import {
-  motion,
-  useMotionTemplate,
-  useMotionValue,
-  useSpring,
-} from "framer-motion";
-import {
-  Shield,
-  Zap,
-  BadgeEuro,
-  HeadphonesIcon,
-  CreditCard,
-  Leaf,
-} from "lucide-react";
+import { motion, useMotionTemplate, useMotionValue, useSpring } from "framer-motion";
+import { Shield, Zap, BadgeEuro, HeadphonesIcon, CreditCard, Leaf } from "lucide-react";
 import { useRef } from "react";
 
 const features = [
@@ -56,13 +44,7 @@ const features = [
   },
 ];
 
-function TiltCard({
-  children,
-  gradient,
-}: {
-  children: React.ReactNode;
-  gradient: string;
-}) {
+function TiltCard({ children, gradient }: { children: React.ReactNode; gradient: string }) {
   const ref = useRef<HTMLDivElement>(null);
   const mouseX = useMotionValue(0);
   const mouseY = useMotionValue(0);
@@ -195,10 +177,7 @@ export function FeaturesSection() {
                       className={`absolute inset-0 rounded-3xl bg-linear-to-br ${feature.gradient} opacity-0 group-hover:opacity-100 transition-opacity duration-500`}
                     />
 
-                    <div
-                      className="relative z-10"
-                      style={{ transform: "translateZ(40px)" }}
-                    >
+                    <div className="relative z-10" style={{ transform: "translateZ(40px)" }}>
                       {/* Icon with animation */}
                       <motion.div
                         className={`w-14 h-14 rounded-2xl bg-primary/10 ${feature.iconBg} flex items-center justify-center mb-6 transition-all duration-300`}

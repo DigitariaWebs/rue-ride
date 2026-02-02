@@ -5,15 +5,18 @@ import { useTranslations } from "next-intl";
 import { motion, AnimatePresence } from "framer-motion";
 import { Menu, X, Globe, ChevronDown, Moon, Sun } from "lucide-react";
 import Image from "next/image";
+import Link from "next/link";
 import { Button } from "@/components/ui/button";
 import { setLocaleCookie } from "@/lib/locale";
 import { useTheme } from "@/components/ThemeProvider";
 
 export function Header() {
   const t = useTranslations("header");
+  const tBanner = useTranslations("banner");
   const { theme, toggleTheme } = useTheme();
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isLangOpen, setIsLangOpen] = useState(false);
+  const [showBanner, setShowBanner] = useState(true);
 
   const navLinks = [
     { href: "#home", label: t("home") },
@@ -30,169 +33,215 @@ export function Header() {
   };
 
   return (
-    <header className="fixed top-0 left-0 right-0 z-50 bg-background/80 backdrop-blur-lg border-b border-border/50">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex items-center justify-between h-16 md:h-18 lg:h-20 xl:h-20">
-          {/* Logo */}
-          <a href="#" className="flex items-center">
-            <motion.div
-              whileHover={{ scale: 1.02 }}
-              transition={{ type: "spring", stiffness: 400, damping: 25 }}
-            >
-              <Image
-                src={theme === "dark" ? "/logo-dark.png" : "/logo-light.png"}
-                alt="VTC Ride"
-                width={160}
-                height={56}
-                className="h-11 md:h-12 lg:h-14 xl:h-14 w-auto"
-                priority
-              />
-            </motion.div>
-          </a>
-
-          {/* Desktop Navigation */}
-          <nav className="hidden lg:flex items-center gap-8">
-            {navLinks.map((link) => (
-              <a
-                key={link.href}
-                href={link.href}
-                className="text-sm font-medium text-muted-foreground hover:text-foreground transition-colors"
-              >
-                {link.label}
-              </a>
-            ))}
-          </nav>
-
-          {/* Desktop Actions */}
-          <div className="hidden lg:flex items-center gap-2">
-            {/* Theme Toggle */}
-            <button
-              onClick={toggleTheme}
-              className="p-2 rounded-lg text-muted-foreground hover:text-foreground hover:bg-muted transition-colors"
-              aria-label="Toggle theme"
-            >
-              <AnimatePresence mode="wait" initial={false}>
-                <motion.div
-                  key={theme}
-                  initial={{ opacity: 0, rotate: -90, scale: 0.5 }}
-                  animate={{ opacity: 1, rotate: 0, scale: 1 }}
-                  exit={{ opacity: 0, rotate: 90, scale: 0.5 }}
-                  transition={{ duration: 0.2 }}
-                >
-                  {theme === "dark" ? (
-                    <Moon className="w-4 h-4" />
-                  ) : (
-                    <Sun className="w-4 h-4" />
-                  )}
-                </motion.div>
-              </AnimatePresence>
-            </button>
-
-            {/* Language Switcher */}
-            <div className="relative">
-              <button
-                onClick={() => setIsLangOpen(!isLangOpen)}
-                className="flex items-center gap-1 text-sm text-muted-foreground hover:text-foreground transition-colors p-2 rounded-lg hover:bg-muted"
-              >
-                <Globe className="w-4 h-4" />
-                <ChevronDown className="w-3 h-3" />
-              </button>
-              <AnimatePresence>
-                {isLangOpen && (
-                  <motion.div
-                    initial={{ opacity: 0, y: -10 }}
-                    animate={{ opacity: 1, y: 0 }}
-                    exit={{ opacity: 0, y: -10 }}
-                    className="absolute right-0 mt-2 w-32 bg-card border border-border rounded-xl shadow-lg overflow-hidden"
-                  >
-                    <button
-                      onClick={() => handleLanguageChange("fr")}
-                      className="w-full px-4 py-2 text-left text-sm hover:bg-muted transition-colors"
-                    >
-                      🇫🇷 Français
-                    </button>
-                    <button
-                      onClick={() => handleLanguageChange("en")}
-                      className="w-full px-4 py-2 text-left text-sm hover:bg-muted transition-colors"
-                    >
-                      🇬🇧 English
-                    </button>
-                  </motion.div>
-                )}
-              </AnimatePresence>
-            </div>
-
-            <Button>{t("getStarted")}</Button>
-          </div>
-
-          {/* Mobile Menu Button */}
-          <div className="lg:hidden flex items-center gap-2">
-            {/* Mobile Theme Toggle */}
-            <button
-              onClick={toggleTheme}
-              className="p-2 rounded-lg text-muted-foreground hover:text-foreground hover:bg-muted transition-colors"
-              aria-label="Toggle theme"
-            >
-              {theme === "dark" ? (
-                <Moon className="w-5 h-5" />
-              ) : (
-                <Sun className="w-5 h-5" />
-              )}
-            </button>
-
-            <button
-              onClick={() => setIsMenuOpen(!isMenuOpen)}
-              className="p-2 rounded-lg hover:bg-muted transition-colors"
-            >
-              {isMenuOpen ? (
-                <X className="w-6 h-6" />
-              ) : (
-                <Menu className="w-6 h-6" />
-              )}
-            </button>
-          </div>
-        </div>
-      </div>
-
-      {/* Mobile Menu */}
+    <>
+      {/* Mobile App Announcement Banner */}
       <AnimatePresence>
-        {isMenuOpen && (
+        {showBanner && (
           <motion.div
-            initial={{ opacity: 0, height: 0 }}
-            animate={{ opacity: 1, height: "auto" }}
-            exit={{ opacity: 0, height: 0 }}
-            className="lg:hidden border-t border-border bg-background"
+            initial={{ height: 0, opacity: 0 }}
+            animate={{ height: "auto", opacity: 1 }}
+            exit={{ height: 0, opacity: 0 }}
+            transition={{ duration: 0.3 }}
+            className="fixed top-0 left-0 right-0 z-50 bg-primary text-primary-foreground overflow-hidden"
           >
-            <nav className="flex flex-col p-4 gap-2">
+            <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+              <div className="flex items-center justify-between py-2.5 gap-4">
+                <div className="flex items-center gap-2 flex-1 justify-center">
+                  <motion.span
+                    animate={{ scale: [1, 1.2, 1] }}
+                    transition={{ duration: 2, repeat: Infinity }}
+                    className="text-lg"
+                  >
+                    📱
+                  </motion.span>
+                  <span className="text-sm font-medium">
+                    {tBanner("message")}
+                  </span>
+                </div>
+                <button
+                  onClick={() => setShowBanner(false)}
+                  className="p-1 hover:bg-primary-foreground/20 rounded-lg transition-colors"
+                  aria-label="Close banner"
+                >
+                  <X className="w-4 h-4" />
+                </button>
+              </div>
+            </div>
+          </motion.div>
+        )}
+      </AnimatePresence>
+
+      <header
+        className="fixed left-0 right-0 z-50 bg-background/80 backdrop-blur-lg border-b border-border/50"
+        style={{ top: showBanner ? "42px" : "0" }}
+      >
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="flex items-center justify-between h-16 md:h-18 lg:h-20 xl:h-20">
+            {/* Logo */}
+            <a href="#" className="flex items-center">
+              <motion.div
+                whileHover={{ scale: 1.02 }}
+                transition={{ type: "spring", stiffness: 400, damping: 25 }}
+              >
+                <Image
+                  src={theme === "dark" ? "/logo-dark.png" : "/logo-light.png"}
+                  alt="VTC Ride"
+                  width={160}
+                  height={56}
+                  className="h-11 md:h-12 lg:h-14 xl:h-14 w-auto"
+                  priority
+                />
+              </motion.div>
+            </a>
+
+            {/* Desktop Navigation */}
+            <nav className="hidden lg:flex items-center gap-8">
               {navLinks.map((link) => (
                 <a
                   key={link.href}
                   href={link.href}
-                  onClick={() => setIsMenuOpen(false)}
-                  className="px-4 py-3 text-sm font-medium text-muted-foreground hover:text-foreground hover:bg-muted rounded-lg transition-colors"
+                  className="text-sm font-medium text-muted-foreground hover:text-foreground transition-colors"
                 >
                   {link.label}
                 </a>
               ))}
-              <div className="flex gap-2 mt-4">
-                <button
-                  onClick={() => handleLanguageChange("fr")}
-                  className="flex-1 px-4 py-2 text-sm border border-border rounded-lg hover:bg-muted transition-colors"
-                >
-                  🇫🇷 FR
-                </button>
-                <button
-                  onClick={() => handleLanguageChange("en")}
-                  className="flex-1 px-4 py-2 text-sm border border-border rounded-lg hover:bg-muted transition-colors"
-                >
-                  🇬🇧 EN
-                </button>
-              </div>
-              <Button className="mt-2 w-full">{t("getStarted")}</Button>
             </nav>
-          </motion.div>
-        )}
-      </AnimatePresence>
-    </header>
+
+            {/* Desktop Actions */}
+            <div className="hidden lg:flex items-center gap-2">
+              {/* Theme Toggle */}
+              <button
+                onClick={toggleTheme}
+                className="p-2 rounded-lg text-muted-foreground hover:text-foreground hover:bg-muted transition-colors"
+                aria-label="Toggle theme"
+              >
+                <AnimatePresence mode="wait" initial={false}>
+                  <motion.div
+                    key={theme}
+                    initial={{ opacity: 0, rotate: -90, scale: 0.5 }}
+                    animate={{ opacity: 1, rotate: 0, scale: 1 }}
+                    exit={{ opacity: 0, rotate: 90, scale: 0.5 }}
+                    transition={{ duration: 0.2 }}
+                  >
+                    {theme === "dark" ? (
+                      <Moon className="w-4 h-4" />
+                    ) : (
+                      <Sun className="w-4 h-4" />
+                    )}
+                  </motion.div>
+                </AnimatePresence>
+              </button>
+
+              {/* Language Switcher */}
+              <div className="relative">
+                <button
+                  onClick={() => setIsLangOpen(!isLangOpen)}
+                  className="flex items-center gap-1 text-sm text-muted-foreground hover:text-foreground transition-colors p-2 rounded-lg hover:bg-muted"
+                >
+                  <Globe className="w-4 h-4" />
+                  <ChevronDown className="w-3 h-3" />
+                </button>
+                <AnimatePresence>
+                  {isLangOpen && (
+                    <motion.div
+                      initial={{ opacity: 0, y: -10 }}
+                      animate={{ opacity: 1, y: 0 }}
+                      exit={{ opacity: 0, y: -10 }}
+                      className="absolute right-0 mt-2 w-32 bg-card border border-border rounded-xl shadow-lg overflow-hidden"
+                    >
+                      <button
+                        onClick={() => handleLanguageChange("fr")}
+                        className="w-full px-4 py-2 text-left text-sm hover:bg-muted transition-colors"
+                      >
+                        🇫🇷 Français
+                      </button>
+                      <button
+                        onClick={() => handleLanguageChange("en")}
+                        className="w-full px-4 py-2 text-left text-sm hover:bg-muted transition-colors"
+                      >
+                        🇬🇧 English
+                      </button>
+                    </motion.div>
+                  )}
+                </AnimatePresence>
+              </div>
+
+              <Link href="/calculator">
+                <Button>{t("getStarted")}</Button>
+              </Link>
+            </div>
+
+            {/* Mobile Menu Button */}
+            <div className="lg:hidden flex items-center gap-2">
+              {/* Mobile Theme Toggle */}
+              <button
+                onClick={toggleTheme}
+                className="p-2 rounded-lg text-muted-foreground hover:text-foreground hover:bg-muted transition-colors"
+                aria-label="Toggle theme"
+              >
+                {theme === "dark" ? (
+                  <Moon className="w-5 h-5" />
+                ) : (
+                  <Sun className="w-5 h-5" />
+                )}
+              </button>
+
+              <button
+                onClick={() => setIsMenuOpen(!isMenuOpen)}
+                className="p-2 rounded-lg hover:bg-muted transition-colors"
+              >
+                {isMenuOpen ? (
+                  <X className="w-6 h-6" />
+                ) : (
+                  <Menu className="w-6 h-6" />
+                )}
+              </button>
+            </div>
+          </div>
+        </div>
+
+        {/* Mobile Menu */}
+        <AnimatePresence>
+          {isMenuOpen && (
+            <motion.div
+              initial={{ opacity: 0, height: 0 }}
+              animate={{ opacity: 1, height: "auto" }}
+              exit={{ opacity: 0, height: 0 }}
+              className="lg:hidden border-t border-border bg-background"
+            >
+              <nav className="flex flex-col p-4 gap-2">
+                {navLinks.map((link) => (
+                  <a
+                    key={link.href}
+                    href={link.href}
+                    onClick={() => setIsMenuOpen(false)}
+                    className="px-4 py-3 text-sm font-medium text-muted-foreground hover:text-foreground hover:bg-muted rounded-lg transition-colors"
+                  >
+                    {link.label}
+                  </a>
+                ))}
+                <div className="flex gap-2 mt-4">
+                  <button
+                    onClick={() => handleLanguageChange("fr")}
+                    className="flex-1 px-4 py-2 text-sm border border-border rounded-lg hover:bg-muted transition-colors"
+                  >
+                    🇫🇷 FR
+                  </button>
+                  <button
+                    onClick={() => handleLanguageChange("en")}
+                    className="flex-1 px-4 py-2 text-sm border border-border rounded-lg hover:bg-muted transition-colors"
+                  >
+                    🇬🇧 EN
+                  </button>
+                </div>
+                <Link href="/calculator">
+                  <Button className="mt-2 w-full">{t("getStarted")}</Button>
+                </Link>
+              </nav>
+            </motion.div>
+          )}
+        </AnimatePresence>
+      </header>
+    </>
   );
 }

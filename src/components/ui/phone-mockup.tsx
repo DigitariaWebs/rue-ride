@@ -155,9 +155,7 @@ export function PhoneMockup() {
                 transition={{ delay: 0.9 }}
               >
                 <div className="bg-card rounded-xl px-3 py-2 shadow-sm border border-border text-xs">
-                  <span className="text-muted-foreground">
-                    {t("locationLabel")}
-                  </span>
+                  <span className="text-muted-foreground">{t("locationLabel")}</span>
                 </div>
               </motion.div>
 
@@ -203,9 +201,7 @@ export function PhoneMockup() {
                 transition={{ delay: 1.2 }}
               >
                 <div className="flex items-center gap-1 text-xs">
-                  <span className="text-muted-foreground">
-                    {t("pickupPoint")}
-                  </span>
+                  <span className="text-muted-foreground">{t("pickupPoint")}</span>
                   <span className="font-medium">• {t("minutes")}</span>
                 </div>
               </motion.div>
@@ -228,9 +224,7 @@ export function PhoneMockup() {
                   animate={{ scale: [1, 1.3, 1] }}
                   transition={{ duration: 2, repeat: Infinity }}
                 />
-                <span className="text-sm text-muted-foreground">
-                  {t("addressPlaceholder")}
-                </span>
+                <span className="text-sm text-muted-foreground">{t("addressPlaceholder")}</span>
               </motion.div>
             </motion.div>
 
@@ -250,9 +244,7 @@ export function PhoneMockup() {
                 transition={{ type: "spring", stiffness: 400 }}
               >
                 <div className="flex items-center justify-between mb-3">
-                  <span className="text-sm font-medium">
-                    {t("rideDetails")}
-                  </span>
+                  <span className="text-sm font-medium">{t("rideDetails")}</span>
                   <motion.span
                     className="text-xs text-primary cursor-pointer"
                     whileHover={{ scale: 1.05 }}
@@ -271,9 +263,7 @@ export function PhoneMockup() {
                     </motion.div>
                     <div>
                       <p className="font-medium text-sm">{t("comfort")}</p>
-                      <p className="text-xs text-muted-foreground">
-                        {t("comfortDesc")}
-                      </p>
+                      <p className="text-xs text-muted-foreground">{t("comfortDesc")}</p>
                     </div>
                   </div>
                   <div className="text-right">

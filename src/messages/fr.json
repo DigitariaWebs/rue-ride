@@ -18,12 +18,10 @@
     "rides": {
       "standard": "Standard",
       "standardDesc": "Courses abordables au quotidien",
-      "plus": "Plus",
-      "plusDesc": "Véhicules premium, confort extra",
-      "xl": "XL",
-      "xlDesc": "Jusqu'à 6 passagers",
-      "electric": "Électrique",
-      "electricDesc": "Écologique, zéro émission"
+      "berline": "Berline",
+      "berlineDesc": "Véhicules premium, confort extra",
+      "vanne": "Vanne",
+      "vanneDesc": "Jusqu'à 6 passagers"
     }
   },
   "metadata": {
@@ -38,9 +36,13 @@
     "contact": "Contact",
     "getStarted": "Commencer"
   },
+  "banner": {
+    "message": "Application Mobile Bientôt Disponible – Restez à l'écoute pour notre lancement !"
+  },
   "hero": {
     "tagline": "Découvrez l'App VTC Ride",
     "explore": "Explorer",
+    "mobileAppSoon": "📱 Application Mobile Bientôt Disponible",
     "headlinePart1": "Simple.",
     "headlinePart2": "Fiable.",
     "headlinePart3": "Votre Course Vous Attend.",
@@ -206,8 +208,9 @@
   "finalCta": {
     "badge": "Commencez Votre Voyage Aujourd'hui",
     "title": "Prêt pour une",
-    "titleHighlight": "Meilleure Expérience ?",
-    "description": "Téléchargez l'app et découvrez ce que devrait être un transport fiable et confortable à Paris. Votre première course n'est qu'à un clic.",
+    "titleHighlight": "Meilleure Expérience de Course ?",
+    "description": "Téléchargez l'application et découvrez ce que devrait être un transport fiable et confortable à Paris. Votre première course n'est qu'à un clic.",
+    "comingSoon": "Bientôt Disponible",
     "downloadOn": "Télécharger sur",
     "appStore": "App Store",
     "getItOn": "Disponible sur",

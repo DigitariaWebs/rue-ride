@@ -54,9 +54,7 @@ export function Footer() {
                 className="h-16 w-auto"
               />
             </a>
-            <p className="text-muted-foreground leading-relaxed max-w-sm mb-4">
-              {t("tagline")}
-            </p>
+            <p className="text-muted-foreground leading-relaxed max-w-sm mb-4">{t("tagline")}</p>
             <div className="flex items-center gap-2 text-sm text-muted-foreground mb-6">
               <MapPin className="w-4 h-4 text-primary" />
               <span>{t("location")}</span>
@@ -142,9 +140,7 @@ export function Footer() {
 
         {/* Bottom Bar */}
         <div className="py-6 md:py-5 lg:py-6 xl:py-6 border-t border-border flex flex-col sm:flex-row items-center justify-between gap-4">
-          <p className="text-sm text-muted-foreground">
-            {t("copyright", { year: currentYear })}
-          </p>
+          <p className="text-sm text-muted-foreground">{t("copyright", { year: currentYear })}</p>
           <div className="flex items-center gap-6">
             <a
               href="#"
